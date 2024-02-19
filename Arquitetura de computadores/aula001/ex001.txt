@@ -24,7 +24,7 @@
 	6=> Linguagem de Programação é uma linguagem escrita e formal que especifica um conjunto de instruções e regras usadas para gerar programas (software) que 	serve para criar algoritimos de um programa para realizar uma tarefa ou resolver problemas Exemplos: Java python C c# C++
 
 7) Cite três componentes eletromecânicos de um computador básico.
-	7=> Cooler, hd
+	7=> Cooler, hd, leitor de cd
 
 8) Cite três componentes eletrônicos de um computador básico.
 	8=> CPU, GPU, placa mãe
