@@ -1,7 +1,8 @@
+Gabriel Mazzuchello Dal Molin
 1) Conceitue os termos “dado” e “informação” no que se refere a seu emprego em processamento de dados. 
-	1=> Os dados são elementos que constituem a matéria-prima da informação. Podemos defini-los, também, como conhecimento bruto, 	ainda não devidamente tratado 	para prover insights para uma organização.
+	1=> Os dados são elementos que constituem a matéria-prima da informação. Podemos defini-los, também, como conhecimento bruto, 	ainda não devidamente tratado 		para prover insights para uma organização.
 	Assim, os dados representam um ou mais significados que, de forma isolada, não conseguem ainda transmitir uma mensagem clara.
-	As informações são os dados devidamente tratados e analisados, produzindo conhecimento relevante. Ao contrário dos elementos 	brutos, elas têm significados 	práticos e podem ser utilizadas para reforçar o processo de tomada de decisão.
+	As informações são os dados devidamente tratados e analisados, produzindo conhecimento relevante. Ao contrário dos elementos 	brutos, elas têm significados 		práticos e podem ser utilizadas para reforçar o processo de tomada de decisão.
 
 2) Caracterize as etapas principais de um processamento de dados. 
 	2=> Etapa 1: Definição do Problema
@@ -12,16 +13,16 @@
 	Etapa 6: Interpretação e Comunicação dos Resultados.
 
 3) Conceitue um sistema. Cite dois exemplos práticos de organizações sistêmicas na vida real.
-	3=> Um sistema é um conjunto de partes coordenadas estruturados para juntas alcançarem um objetivo específico. Dois exemplos seriam um sistema público de 	transporte e um sistema de projeção salarial de uma empresa.
+	3=> Um sistema é um conjunto de partes coordenadas estruturados para juntas alcançarem um objetivo específico. Dois exemplos seriam um sistema público de 		transporte e um sistema de projeção salarial de uma empresa.
 
 4) O que você entende por um programa de computador?
 	4=> Programa de um computador é um conjunto de algoritimo e instruções para realizar uma tarefa ou resolver um problema
 
 5) Conceitue os termos hardware e software.
-	5=> hardwere é a parte fisica de um computador que estará sempre em contato fisico com o usuario já o software é a parte não fisica do computador utilizada 	para procesar os dados 
+	5=> hardwere é a parte fisica de um computador que estará sempre em contato fisico com o usuario já o software é a parte não fisica do computador utilizada 		para procesar os dados 
 
 6) O que é e para que serve uma linguagem de programação? Cite exemplos.
-	6=> Linguagem de Programação é uma linguagem escrita e formal que especifica um conjunto de instruções e regras usadas para gerar programas (software) que 	serve para criar algoritimos de um programa para realizar uma tarefa ou resolver problemas Exemplos: Java python C c# C++
+	6=> Linguagem de Programação é uma linguagem escrita e formal que especifica um conjunto de instruções e regras usadas para gerar programas (software) que 		serve para criar algoritimos de um programa para realizar uma tarefa ou resolver problemas Exemplos: Java python C c# C++
 
 7) Cite três componentes eletromecânicos de um computador básico.
 	7=> Cooler, hd, leitor de cd
@@ -33,4 +34,4 @@
 	9=> o sistema eletronico só ira realizar o circuito que foi feito já um computador ele processa dados e transforma em informãções 
 
 10) Conceitue a Lei de Moore e justifique se ela se aplica a tecnologia atual.
-	10=> a lei de Moore fez previsões que diziãm que o poder computacional dobraria a cada dois anos porem essa lei acabou pois os engenheiros vêm desenvolvendo 	sistemas que exigem menos recursos do processador.
+	10=> a lei de Moore fez previsões que diziãm que o poder computacional dobraria a cada dois anos porem essa lei acabou pois os engenheiros vêm desenvolvendo 		sistemas que exigem menos recursos do processador.
