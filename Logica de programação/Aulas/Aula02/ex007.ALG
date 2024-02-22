@@ -22,5 +22,5 @@ leia(altura)
 
 massa <- peso / (altura * altura)
 
-escreval("Seu IMC (Indice de massa corporal) é: ",massa:2)
+escreval("Seu IMC (Indice de massa corporal) é: ",massa:5:2)
 Fimalgoritmo
