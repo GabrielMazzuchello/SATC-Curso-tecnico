@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2024-03-13T19:59:21.454Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" version="24.0.6" etag="Wr51psLwuCk55EtQmAUm" type="device">
+  <diagram id="SKsTBJq2rNzozx0jFvKN" name="Página-1">
+    <mxGraphModel dx="1120" dy="3079" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-4" target="qCmsnLXOqgDlwXCcZP8T-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-4" target="qCmsnLXOqgDlwXCcZP8T-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-4" target="qCmsnLXOqgDlwXCcZP8T-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-4" value="sistema de notas dos alunos" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-2330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-6" target="qCmsnLXOqgDlwXCcZP8T-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-6" value="realizar provas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-2150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-7" target="qCmsnLXOqgDlwXCcZP8T-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-7" value="cadastro" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="-2230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-8" target="qCmsnLXOqgDlwXCcZP8T-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-8" value="consulta e relatório" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="-2230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-9" target="qCmsnLXOqgDlwXCcZP8T-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-9" value="cadastro de notas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="-2150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-10" value="cadastro da frequencia" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="-2070" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-11" target="qCmsnLXOqgDlwXCcZP8T-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-11" value="aplicar provas&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-2070" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-12" target="qCmsnLXOqgDlwXCcZP8T-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-12" value="realizar aprovação" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-1990" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-13" value="laçar notas e frequência" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-1910" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-15" target="qCmsnLXOqgDlwXCcZP8T-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-15" value="processo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="-2230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCmsnLXOqgDlwXCcZP8T-16" target="qCmsnLXOqgDlwXCcZP8T-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-16" value="realizar aprovação" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="-2150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCmsnLXOqgDlwXCcZP8T-17" value="lançar notas e frequencia" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="-2070" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
