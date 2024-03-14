@@ -31,15 +31,15 @@ caso 1
      media <- (nota1 + nota2 + nota3) / 3
 
      se media >= 7 entao
-        escreval("O aluno foi aprovado, com média de: ",media)
-     fimse
-
-     se (5 < media) e (media < 7) entao
-        escreval("O aluno esta em recuperação, com média de: ",media)
-     fimse
-
-     se media < 5 entao
-        escreval("O aluno foi reprovado, com média de: ",media)
+        escreval("O aluno foi aprovado, com média de: ",media:2:2)
+     senao
+          se (5 < media) e (media < 7) entao
+             escreval("O aluno esta em recuperação, com média de: ",media:2:2)
+          senao
+               se media < 5 entao
+                  escreval("O aluno foi reprovado, com média de: ",media:2:2)
+               fimse
+          fimse
      fimse
 
 caso 2
