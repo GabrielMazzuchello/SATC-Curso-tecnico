@@ -16,16 +16,16 @@ escreval("Informe a sigla do seu curso (ADM, DIR, CEX): ")
 leia(siglacurso)
 limpatela
 
-se siglacurso = "ADM" entao
+se (siglacurso = "ADM") ou (siglacurso = "adm") entao
    escreval("Bem vindo! ",nome, " ao curso de Administração")
-fimse
-
-se siglacurso = "DIR" entao
-   escreval("Bem vindo! ",nome, " ao curso de Direito")
-fimse
-
-se siglacurso = "CEX" entao
-   escreval("Bem vindo! ",nome, " ao curso de Comércio Exterior")
+senao
+     se (siglacurso = "DIR") ou (siglacurso = "dir") entao
+        escreval("Bem vindo! ",nome, " ao curso de Direito")
+     senao
+          se (siglacurso = "CEX") ou (siglacurso = "cex") entao
+             escreval("Bem vindo! ",nome, " ao curso de Comércio Exterior")
+          fimse
+     fimse
 fimse
 
 Fimalgoritmo
