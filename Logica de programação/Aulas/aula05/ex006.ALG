@@ -24,6 +24,9 @@ senao
      senao
           se (siglacurso = "CEX") ou (siglacurso = "cex") entao
              escreval("Bem vindo! ",nome, " ao curso de Comércio Exterior")
+          senao
+             escreval("Curso não reconhecido")
+             
           fimse
      fimse
 fimse
