@@ -1,3 +1,4 @@
+import math
 vetor = [0]*10
 for i in range(10):
     vetor[i] = input('Digite um valor: ')
