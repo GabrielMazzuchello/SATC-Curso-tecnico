@@ -1,12 +1,14 @@
-for c in range(11):
-    maior = 0
-    menor = 0
-    numero = int(input('Informe um numero inteiro: '))
+vetor = [0]*10
+for i in range(10):
+    vetor[i] = input('Digite um valor: ')
 
-    if numero > maior:
-        maior = numero
+maior = vetor[0]    
+menor = vetor[0]
 
-    elif numero < menor:
-        menor = numero
-
-print('O maior numer é {} e o menor numero é {}'.format(maior, menor))
+for i in range(0, 10):
+    if vetor[i] > maior:
+        maior = vetor[i]
+    elif vetor[i] < menor:
+        menor = vetor[i]
+print('O maior numero é: {}'.format(maior))
+print('O menor numero é: {} '.format(menor))
