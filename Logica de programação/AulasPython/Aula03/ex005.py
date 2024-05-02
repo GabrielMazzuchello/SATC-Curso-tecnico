@@ -5,7 +5,7 @@ menor = math.inf
 digitos = 0
 while True:
     numero = int(input('Informe um numero: '))
-    if numero < 0:
+    if numero == -1:
         break
     else:
         if numero > maior:
