@@ -4,10 +4,9 @@ void setup() {
 
 void loop() {
   Serial.println("Digite um numero: ");
-  int valor = Serial.();
+  while (!Serial.available()) {}
+  int valor = Serial.parseInt();
   Serial.print("O numero digitado foi ");
-  Serial.write(valor);
-  Serial.println();
-
-
+  Serial.println(valor);
+  delay(2000);
 }
