@@ -6,7 +6,7 @@ while True:
             sex = str(input('Informe seu sexo F paar feminino e M paar masculino: ')).upper()
             if (sex == 'F' or sex == 'M'):
                 maritalstatus = str(input('Informe seu estado civil "S"-solteiro, "C"-Casado, "V"-Viuvo(a), "D"-Divorciado(a): ')).upper()
-                if (sex == 'F' or sex == 'M') and (maritalstatus == 'S' or maritalstatus == 'C' or maritalstatus == 'V' or maritalstatus == 'D'):
+                if (maritalstatus == 'S' or maritalstatus == 'C' or maritalstatus == 'V' or maritalstatus == 'D'):
                     wage = float(input('Informe seu salario: '))
                     if wage > 0:
                         print('Cadastro realizado com sucesso!')
