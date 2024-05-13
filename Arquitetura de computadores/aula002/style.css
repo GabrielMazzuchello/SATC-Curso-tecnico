@@ -1,0 +1,16 @@
+body{
+    text-align: start;
+    padding-left: 30%;
+    background-color: aquamarine;
+    max-width: 50%;
+    line-height: 25px;
+    color: black;
+}
+
+div{
+    text-align: center;
+}
+
+legend{
+    text-align: center;
+}
