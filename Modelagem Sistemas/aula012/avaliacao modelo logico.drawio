@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" modified="2024-05-29T17:16:46.746Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="9q3uCFIBH9hbqalp7tbT" version="24.4.7" type="device">
+  <diagram name="Página-1" id="sqxgg4AnLUUMArVOLOTm">
+    <mxGraphModel dx="1760" dy="1058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-1" value="Universidade" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-2" value="CNPJ PK&lt;div&gt;nome&lt;/div&gt;&lt;div&gt;telefone&lt;/div&gt;&lt;div&gt;cidade&lt;/div&gt;&lt;div&gt;estado&lt;/div&gt;&lt;div&gt;endereco&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4n-4f-8q7Ap9Mwjp9947-1">
+          <mxGeometry y="50" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-3" value="curso" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="40" width="160" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-4" value="Código PK&lt;div&gt;nome&lt;/div&gt;&lt;div&gt;período&lt;/div&gt;&lt;div&gt;disciplinas&lt;/div&gt;&lt;div&gt;turmas&lt;/div&gt;&lt;div&gt;CNPJUnivercidade FK&lt;/div&gt;&lt;div&gt;codigocoordenador FK&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4n-4f-8q7Ap9Mwjp9947-3">
+          <mxGeometry y="50" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-5" value="coordenador" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="40" width="160" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-6" value="Codigo PK&lt;div&gt;nome&amp;nbsp;&lt;/div&gt;&lt;div&gt;cidade&amp;nbsp;&lt;/div&gt;&lt;div&gt;estado&lt;/div&gt;&lt;div&gt;endereco&lt;/div&gt;&lt;div&gt;cpf&lt;/div&gt;&lt;div&gt;rg&lt;/div&gt;&lt;div&gt;telefone&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4n-4f-8q7Ap9Mwjp9947-5">
+          <mxGeometry y="50" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-7" value="Diciplina" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="260" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-8" value="codigo PK&lt;div&gt;nome&lt;/div&gt;&lt;div&gt;ementa&lt;/div&gt;&lt;div&gt;codigocurso FK&lt;/div&gt;&lt;div&gt;codigoprofessor FK&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4n-4f-8q7Ap9Mwjp9947-7">
+          <mxGeometry y="50" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-9" value="Professor" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-10" value="Codigo PK&lt;div&gt;nome&lt;/div&gt;&lt;div&gt;cpf&lt;/div&gt;&lt;div&gt;rg&lt;/div&gt;&lt;div&gt;telefone&lt;/div&gt;&lt;div&gt;endereco&lt;/div&gt;&lt;div&gt;estado&lt;/div&gt;&lt;div&gt;cidade&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" vertex="1" parent="4n-4f-8q7Ap9Mwjp9947-9">
+          <mxGeometry y="50" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-13" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.01;entryY=0.833;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="4n-4f-8q7Ap9Mwjp9947-4">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="100" as="sourcePoint" />
+            <mxPoint x="330" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-17" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;rounded=0;exitX=0.997;exitY=0.882;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4n-4f-8q7Ap9Mwjp9947-4">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="500" y="190" as="sourcePoint" />
+            <mxPoint x="630" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="187" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-18" value="" style="fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;entryX=0.001;entryY=0.112;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="329.84" y="367.69" as="sourcePoint" />
+            <mxPoint x="333.99999999999994" y="100.01000000000002" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="309.84" y="367.69" />
+              <mxPoint x="309.84" y="99.69" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4n-4f-8q7Ap9Mwjp9947-19" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;exitX=1.002;exitY=0.097;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4n-4f-8q7Ap9Mwjp9947-10">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="200" y="380" as="sourcePoint" />
+            <mxPoint x="330" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
