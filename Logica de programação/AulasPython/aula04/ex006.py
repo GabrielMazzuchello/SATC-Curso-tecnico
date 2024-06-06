@@ -1,0 +1,1 @@
+posicao = int(input('digite a possição '))
