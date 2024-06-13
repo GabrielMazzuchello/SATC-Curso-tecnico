@@ -1,0 +1,15 @@
+# criar as tabelas do BP
+create table cursos (
+codigo int(5) not null,
+nome varchar(50) not null,
+coordenador varchar(50) not null,
+primary key (codigo));
+
+crate table alunos (
+codigo int(5) not null,
+nome varchar(50) not null,
+endereco varchar(50) not null,
+telefone int(10) not null,
+codcurso int(5) not null,
+primary key (codigo));
+foreign key (codcursos) references cursos (codigo));
