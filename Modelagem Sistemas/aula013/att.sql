@@ -30,4 +30,4 @@ CREATE TABLE compras (
     PRIMARY KEY (codigo),
     FOREIGN KEY (codcliente) REFERENCES clientes (codigo),
     FOREIGN KEY (codproduto) REFERENCES produtos (codigo)
-):
+);
