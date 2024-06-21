@@ -71,7 +71,13 @@ def desenhar_forca(erro):
     # Mostra ao ussuario o  estagio da forca
     print(estagios[erro])
 
-palavras_secretas = ['python', 'programação', 'computador', 'algoritmo'] # Lista de palavras para o jogo
+# Lista de palavras para o jogo
+palavras_secretas = [
+    'linguagem', 'biblioteca', 'hardware', 'software', 'funcao', 'variavel',
+    'algoritmo', 'sintaxe', 'declarar','sistema', 'criptografia', 'banco','script', 
+    'codigo', 'bug', 'python', 'programação', 'computador'
+]
+
 letras_adivinhadas = [] # Lista para armazenar todas as letras que foram informadas
 letras_corretas = [] # Lista para armazenar as letras corretas
 n_letras = [] # Lista para mostrar a palavra com as letras adivinhadas e as que ainda não foram fica com um espaço
