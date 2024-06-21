@@ -75,6 +75,7 @@ palavras_secretas = ['python', 'programação', 'computador', 'algoritmo'] # Lis
 letras_adivinhadas = [] # Lista para armazenar todas as letras que foram informadas
 letras_corretas = [] # Lista para armazenar as letras corretas
 n_letras = [] # Lista para mostrar a palavra com as letras adivinhadas e as que ainda não foram fica com um espaço
+jogo_ativo = True # mantem loop principal rodando
 
 palavra_escolhida = random.choice(palavras_secretas) # Escolhe aleatoriamente uma palavra da lista
 
@@ -87,7 +88,7 @@ for c in range(numero_letras):
     n_letras.append('_')
 
 # Loop principal do jogo
-while True:
+while jogo_ativo:
     print('Dica: Relacionado ao curso')
     print("Palavra: ", " ".join(n_letras)) # Mostra a palavra com as letras adivinhadas e as que não foram ficam com uma underline
     desenhar_forca(erro) # Desenha a forca 
@@ -141,17 +142,27 @@ while True:
         print()
         print(" ".join(n_letras)) # Mostra a palavra atualizada com as letras adivinhadas para o jogador escoher tentar ou não adivinhar
         
-        # Pergunta ao jogador se ele deseja tentar adivinhar a palavra
-        escolha = input('Você deseja tentar adivinhar a palavra? (S/N) ').upper().strip()
-        if escolha == 'S':
-            palavra = input('Informe a palavra: ').lower().strip()
-            if palavra == palavra_escolhida:
-                # Se a palavra estiver correta, o jogador vence
-                print('Você acertou, parabéns!!')
+        while True:
+            # Pergunta ao jogador se ele deseja tentar adivinhar a palavra
+            escolha = input('Você deseja tentar adivinhar a palavra? (S/N) ').upper().strip()
+            if escolha == 'S':
+                palavra = input('Informe a palavra: ').lower().strip()
+                if palavra == palavra_escolhida:
+                    # Se a palavra estiver correta, o jogador vence
+                    print('Você acertou, parabéns!!')
+                    jogo_ativo = False # como o jogo acabou jogo_ativo recebe falso para parar o loop principal
+                    break
+                    
+                else:
+                    # Se a palavra estiver errada, pede para continuar tentando (Não a penaidade por errar)
+                    print('Você errou! Continue tentando.')
+                    break
+            elif escolha == 'N':
+                print('Boa sorte então! \n')
                 break
             else:
-                # Se a palavra estiver errada, pede para continuar tentando (Não a penaidade por errar)
-                print('Você errou! Continue tentando.')
+                print('Opção invalida!')
+
     except ValueError as ve:
         # Mostra a mensagem de erro para entradas inválidas da verificação da linha 105
         print(ve)
