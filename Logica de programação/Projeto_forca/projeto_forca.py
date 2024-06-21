@@ -101,15 +101,16 @@ while True:
     
     if letra_a_verificar in palavra_escolhida:
         print('Letra correta!\n')
+        letras_corretas.append(letra_a_verificar)
+
         for idx, letra in enumerate(palavra_escolhida):
             if letra == letra_a_verificar:
                 n_letras[idx] = letra
 
         if '_' not in n_letras:
-            print('Parabéns! Você adivinhou a palavra:', palavra_escolhida)
+            print('Parabéns! Você adivinhou a palavra: {}'.format(palavra_escolhida))
             break
 
-        letras_corretas.append(letra_a_verificar)
         
     else:
         print('Letra errada!')
@@ -120,6 +121,7 @@ while True:
     print('Letras corretas: ', " ".join(letras_corretas))
     print('Letras adivinhadas: ', " ".join(letras_adivinhadas))
     print()
+    print(" ".join(n_letras))
     
     escolha = input('Você deseja tentar adivinhar a palavra? (S/N) ').upper().strip()
     if escolha == 'S':
