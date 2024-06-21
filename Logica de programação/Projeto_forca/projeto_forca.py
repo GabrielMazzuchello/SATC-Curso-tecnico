@@ -139,7 +139,7 @@ while jogo_ativo:
         # Mostra as letras corretas e adivinhadas até o momento
         print('Letras corretas: ', " ".join(letras_corretas))
         print('Letras adivinhadas: ', " ".join(letras_adivinhadas))
-        print()
+        print('')
         print(" ".join(n_letras)) # Mostra a palavra atualizada com as letras adivinhadas para o jogador escoher tentar ou não adivinhar
         
         while True:
