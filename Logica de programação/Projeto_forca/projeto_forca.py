@@ -109,8 +109,8 @@ while jogo_ativo:
         # Pede uma letra do jogador
         letra_a_verificar = input("Informe uma letra: ").lower().strip()
 
-        if not letra_a_verificar.isalpha():
-            # Verifica se foi informado algo alem de uma letra, retorna um erro
+        if not letra_a_verificar.isalpha() or len(letra_a_verificar) != 1:
+            # Verifica se foi informado algo alem de letra e se forem varias letras, retorna um erro
             raise ValueError('Entrada inválida: Apenas letras são permitidas.')
     
         if letra_a_verificar in letras_adivinhadas:
