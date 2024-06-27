@@ -171,7 +171,7 @@ while jogo_ativo:
                 print('Opção invalida!')
 
     except ValueError as ve:
-        # Mostra a mensagem de erro para entradas inválidas da verificação da linha 105
+        # Mostra a mensagem de erro para entradas inválidas da verificação da linha 112
         print(ve)
 
 # mensagem informando que o jogo acabou
