@@ -1,0 +1,112 @@
+CRIAR ESTRUTURA BD ESCOLA:
+
+//Criar o BD
+create database escola;
+
+//criar as tabelas
+
+create table estado (
+codigo  int(5)      not null,
+nome    varchar(50) not null,
+primary key (codigo));
+
+create table cidade (
+codigo    int(5)      not null,
+nome      varchar(50) not null,
+codestado int(5)      not null,
+primary key (codigo),
+foreign key (codestado) references estado(codigo));
+
+create table aluno (
+codigo      int(5)      not null,
+nome        varchar(50) not null,
+endereco    varchar(50) not null,
+bairro      varchar(50) not null,
+codcidade   int(5)      not null,
+telefone    int(10)     not null,
+nomepai     varchar(50) not null,
+nomemae     varchar(50) not null,
+fonepai     int(10)     not null, 
+fonemae     int(10)     not null,
+rg          int(12)     not null,
+cpf         int(12)     not null,
+email       varchar(50) not null,
+datanasc    date        not null,
+codcurso    int(5)      not null,
+primary key (codigo),
+foreign key (codcidade) references cidade(codigo),
+foreign key (codcurso)  references curso(codigo));
+
+create table curso (
+codigo  int(5)      not null,
+nome    varchar(50) not null,
+primary key (codigo));
+
+create table professor (
+codigo      int(5)      not null,
+nome        varchar(50) not null,
+endereco    varchar(50) not null,
+bairro      varchar(50) not null,
+codcidade   int(5)      not null,
+telefone    int(10)     not null,
+rg          int(12)     not null,
+cpf         int(12)     not null,
+email       varchar(50) not null,
+datanasc    date        not null,
+codcurso    int(5)      not null,
+primary key (codigo),
+foreign key (codcidade) references cidade(codigo),
+foreign key (codcurso)  references curso(codigo));
+
+create table disciplina (
+codigo       int(5)      not null,
+nome         varchar(50) not null,
+ementa       varchar(50) not null,
+nraulas      int(2)      not null,
+periodo	     varchar(50) not null,
+codcurso     int(5)      not null,
+codprofessor int(5)      not null,
+primary key (codigo),
+foreign key (codcurso) references curso(codigo),
+foreign key (codprofessor) references professor(codigo));
+
+------------------------------------------------------------------------
+Inserir 03 registros em cada tabela:
+
+insert into estado(codigo,nome) values (1,"Santa Catarina");
+insert into estado(codigo,nome) values (2,"Paraná");
+insert into estado(codigo,nome) values (3,"Rio Grande do Sul");
+
+------------------------
+
+insert into cidade(codigo,nome,codestado) values (1,"Criciúma",1);
+insert into cidade(codigo,nome,codestado) values (2,"Curitiba",2);
+insert into cidade(codigo,nome,codestado) values (3,"Porto Alegre",3);
+
+-------------------------
+insert into curso(codigo,nome) values (1,"informática");
+insert into curso(codigo,nome) values (2,"mecânica");
+insert into curso(codigo,nome) values (3,"design");
+
+-------------------------
+
+insert into aluno(codigo,nome,endereco,bairro,codcidade,telefone,nomepai,nomemae,
+fonepai,fonemae,rg,cpf,email,datanasc,codcurso) 
+values (1,"Arthur Fernandes","Rua Rosita Finster","Jardim Angelica",1,12345,"Luciano","Cris",
+12345,345678,22334455,55667788,"arthur@gmail.com","11/09/2005",2);
+
+incluir +2 alunos
+-------------------------
+insert into professor(codigo,nome,endereco,bairro,codcidade,telefone,
+rg,cpf,email,datanasc,codcurso) 
+values (1,"Cris Pavei","Rua Rosita Finster","Jardim Angelica",1,12345,
+22334455,55667788,"cris@gmail.com","30/07/1974",1);
+
+incluir +2 profs
+-------------------------
+insert into disciplina(codigo,nome,ementa,nraulas,periodo,codcurso,codprofessor) 
+values (1,"Banco Dados","Modelagem,criacao e programação do BD",3,"Vespertino",1,1);
+
+incluir +2 disciplinas
+-------------------------
+
