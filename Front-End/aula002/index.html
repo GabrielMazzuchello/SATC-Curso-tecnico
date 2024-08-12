@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Simples</title>
+</head>
+<body>
+    <h2>Formulário de Contato</h2>
+    <form name="Formulário" action="/enviar-formulario" method="post">
+    Nome: <input type="text" name="nome" id="nome" size="30">
+    E-mail: <input type="text" name="e-mail" id="e-mail" size="30">
+    senha: <input type="password" name="senha" id="senha" size="50" maxlength="10">
+
+    <br>
+    curso: <br><br>
+    <input type="checkbox" name="curso" id="curso" value="I">Informatica
+    <input type="checkbox" name="curso" id="curso" value="M">Mecânica
+    <input type="checkbox" name="curso" id="curso" value="D">Desing
+
+    <br><br>
+    
+    sexo: <br>
+    <input type="radio" name="sexo" id="sexo" value="M">Masculino
+    <input type="radio" name="sexo" id="sexo" value="F">Feminino
+    <input type="radio" name="sexo" id="sexo" value="O">Outro
+
+    <br><br>
+    <select name="Estado">
+        <option value="SC">Santa Catarina</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="PR">Paraná</option>
+    </select>
+    <br><br><br>
+
+    comentario:
+    <textarea name="comentar" id="comentar" rows=5 cols="30">digite seu texto aqui: </textarea>
+
+    Data nascimento: <br>
+    <input type="date" name="datadenascimento" id="datadenascimento">
+    <br><br>
+
+    Horario: <br>
+    <input type="time" name="hora" id="hora">
+    <br><br>
+
+    <input type="submit" name="Enviar" id="enviar">
+    <input type="reset" name="Reset" id="Reset">
+    </form>
+</body>
+</html>
