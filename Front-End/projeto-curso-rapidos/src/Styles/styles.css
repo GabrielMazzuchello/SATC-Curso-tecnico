@@ -4,6 +4,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #b3b3b3;
+}
+.logo  {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    
 }
 
 /* Estilização do conteúdo */
@@ -13,7 +20,7 @@
     align-items: flex-start;
     border: 1px solid #ccc;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #dddbdb;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 900px;
@@ -25,7 +32,7 @@
     align-items: flex-start;
     border: 1px solid #ccc;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #dddbdb;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 900px;
@@ -183,7 +190,7 @@ hr {
     box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
   }
   
-
+/* CSS do botão de informações ================================================= */
 .toggle-content {
     display: none; 
     overflow: hidden;
