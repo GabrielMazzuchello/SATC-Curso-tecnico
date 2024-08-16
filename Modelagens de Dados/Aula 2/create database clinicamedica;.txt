@@ -72,8 +72,8 @@ insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) value
 insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (30333, "consulta para exame", "exame", 06/04/2022, "encaminhado", 3);
 
 insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (1,"Gabriel", "poço 8", 96373641, "içara", "SC" "Oftalmologista");
-insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (2,"Vitor", "poço 3", 99834733, "içara", "SC" "Pneumologista");
-insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (3,"Gustavo", "terceira linha", 99484746, "içara", "SC" "Cardiologista");
+insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (2,"Vitor", "poço 3", 99834733, "criciuma", "SC" "Pneumologista");
+insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (3,"Gustavo", "terceira linha", 99484746, "curitiba", "PR" "Cardiologista");
 
 
 insert into paciente(codpaciente, nome, endereco, telefone, cidade, estado, sexo, datanasc, estadocivil, rg, cpf, carteira) values (1, 'joao', 'Rua das Palmeiras, 123', '1234-5678', 'Florianópolis', 'SC', 'F', '1990-05-15', 'Solteiro', '123456789', '123.456.789-00', 'ABC123456');
