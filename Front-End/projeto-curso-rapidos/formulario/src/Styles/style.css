@@ -6,12 +6,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
+    background-color: #b3b3b3;
     flex-direction: column; 
 }
 
 .form-container {
-    background-color: white;
+    background-color: #dddbdb;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,4 +47,33 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
+}
+
+.toggle-content {
+    display: none; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 0; 
+    margin-top: 10px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #008542;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #006a34;
+}
+
+.show {
+    display: block;
+    max-height: 1000px; 
 }

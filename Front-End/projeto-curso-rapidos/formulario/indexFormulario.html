@@ -16,17 +16,17 @@
             <br><br>
 
             <label for="Endereco">Endereço:</label> 
-            <input type="text" name="Endereco" id="Endereco"> 
+            <input type="text" name="Endereco" id="Endereco" required> 
 
             <label for="Bairro">Bairro:</label> 
-            <input type="text" name="Bairro" id="Bairro"> 
+            <input type="text" name="Bairro" id="Bairro" required> 
             <br><br>
             
             <label for="Cidade">Cidade:</label> 
-            <input type="text" name="Cidade" id="Cidade"> 
+            <input type="text" name="Cidade" id="Cidade" required> 
 
             <label for="estado">Estado:</label>
-            <select name="estado" id="estado">
+            <select name="estado" id="estado" required>
                 <option value="SC">Santa Catarina</option>
                 <option value="RS">Rio Grande do Sul</option>
                 <option value="PR">Paraná</option>
@@ -36,10 +36,10 @@
             <br><br>
 
             <label for="CEP">CEP:</label>
-            <input type="text" name="CEP" id="CEP" size="8">
+            <input type="text" name="CEP" id="CEP" size="8" required>
 
             <label for="Pais">País:</label>
-            <select name="Pais" id="Pais">
+            <select name="Pais" id="Pais" required>
                 <option value="BR">Brasil</option>
                 <option value="US">Estados Unidos</option>
                 <option value="FR">França</option>
@@ -49,7 +49,7 @@
             <br><br>
 
             <label for="E-mail">E-mail:</label>
-            <input type="text" name="E-mail" id="E-mail">
+            <input type="text" name="E-mail" id="E-mail" >
 
             <label for="CPF">CPF:</label>
             <input type="text" name="CPF" id="CPF" size="11"> 
@@ -89,6 +89,46 @@
             <label for="datadenascimento">Data de nascimento:</label>
             <input type="date" name="datadenascimento" id="datadenascimento">
             <br><br>
+
+            <label>Nível de Educação:</label> 
+            <br>
+            <input type="checkbox" name="escolaridade" id="estado_solteiro" value="S">
+            <label for="educacao_fundamental">Ensino Fundamental(a)</label>
+
+            <input type="checkbox" name="escolaridade" id="estado_casado" value="C">
+            <label for="educacao_tecnico">Ensino Técnico(a)</label>
+
+            <input type="checkbox" name="escolaridade" id="estado_divorciado" value="D">
+            <label for="educacao_faculdade">Faculdade</label>  
+            <br><br>
+
+            <label for="estado">Curso:</label>
+            <select name="curso" id="curso" required>
+                <option value="informatica">Informatica</option>
+                <option value="mecanica">Mecanica</option>
+                <option value="mecratonica">Mecratonica</option>
+                <option value="ingles">Ingles</option>
+                <option value="multi_midia">Multi midia</option>
+            </select>
+            
+            <label>Período:</label> 
+            <br>
+            <input type="radio" name="periodo" id="matutino" value="M">
+            <label for="matutino">Matutino</label>
+
+            <input type="radio" name="periodo" id="vespertino" value="V">
+            <label for="vespertino">Vespertino</label>
+
+            <input type="radio" name="periodo" id="noturno" value="N">
+            <label for="noturno">Noturno</label>  
+            <br><br>
+
+            <label for="datadenascimento">Data de nascimento:</label>
+            <input type="date" name="datadenascimento" id="datadenascimento">
+            <br><br>
+
+            <button type="reset" class="toggle-button">Limpar</button>
+            <button type="submit" class="toggle-button">Enviar</button>
         </form>
     </div>
 </body>
