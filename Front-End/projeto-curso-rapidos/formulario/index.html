@@ -4,52 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrícula</title>
+    <link rel="stylesheet" href="src/Styles/style.css">
+    <link rel="shortcut icon" href="../src/Imagens/SATC.ico" type="image/x-icon">
 </head>
 <body>
-    <h2>Formulário de Matrícula</h2>
-    <form name="Formulario de Matrícula">
-        Nome: <input type="text" name="nome" id="nome" required> <br><br>
-        Endereço: <input type="text" name="Endereco" id="Endereco"> Bairro: <input type="text" name="Bairro" id="Bairro"> <br><br>
-        
-        Cidade: <input type="text" name="Cidade" id="Cidade">
-        <select name="estado" id="estado">
-            <option value="SC">Santa Catarina</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="PR">Paraná</option>
-            <option value="GO">Goiais</option>
-            <option value="SP">São Paulo</option>
-        </select> <br><br>
+    <div class="form-container">
+        <h2>Formulário de Matrícula</h2>
+        <form name="Formulario de Matrícula">
+            <label for="nome">Nome:</label> 
+            <input type="text" name="nome" id="nome" required> 
+            <br><br>
 
-        CEP: <input type="text" name="CEP" id="CEP" size="8">
-        <select name="Pais" id="Pais">
-            <option value="BR">Brasil</option>
-            <option value="US">Estados Unidos</option>
-            <option value="FR">França</option>
-            <option value="JP">Japão</option>
-            <option value="IT">Itália</option>
-        </select> <br><br>
-        E-mail: <input type="text" name="E-mail" id="E-mail">
-        CPF: <input type="text" name="CPF" id="CPF" size="11"> <br><br>
-        Telefone Residencial: <input type="text" name="TelefoneResid" id="TelefoneResid">
-        Telefone Celular: <input type="text" name="TelefoneCell" id="TelefoneCell"> <br><br>
+            <label for="Endereco">Endereço:</label> 
+            <input type="text" name="Endereco" id="Endereco"> 
 
-        Sexo: <br>
-        <input type="radio" name="sexo" id="sexo" value="M">Masculino
-        <input type="radio" name="sexo" id="sexo" value="F">Feminino
-        <input type="radio" name="sexo" id="sexo" value="O">Outro
-        <br><br>
-        
-        Estado Civil: <br>
-        <input type="radio" name="sexo" id="sexo" value="M">Solteiro(a)
-        <input type="radio" name="sexo" id="sexo" value="F">Casado(a)
-        <input type="radio" name="sexo" id="sexo" value="O">Divorciado(a)  
-        <br><br>
+            <label for="Bairro">Bairro:</label> 
+            <input type="text" name="Bairro" id="Bairro"> 
+            <br><br>
+            
+            <label for="Cidade">Cidade:</label> 
+            <input type="text" name="Cidade" id="Cidade"> 
 
-        Data nascimento: <br>
-        <input type="date" name="datadenascimento" id="datadenascimento">
-        <br><br>
-         
-    </form>
-    
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado">
+                <option value="SC">Santa Catarina</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="PR">Paraná</option>
+                <option value="GO">Goiás</option>
+                <option value="SP">São Paulo</option>
+            </select> 
+            <br><br>
+
+            <label for="CEP">CEP:</label>
+            <input type="text" name="CEP" id="CEP" size="8">
+
+            <label for="Pais">País:</label>
+            <select name="Pais" id="Pais">
+                <option value="BR">Brasil</option>
+                <option value="US">Estados Unidos</option>
+                <option value="FR">França</option>
+                <option value="JP">Japão</option>
+                <option value="IT">Itália</option>
+            </select> 
+            <br><br>
+
+            <label for="E-mail">E-mail:</label>
+            <input type="text" name="E-mail" id="E-mail">
+
+            <label for="CPF">CPF:</label>
+            <input type="text" name="CPF" id="CPF" size="11"> 
+            <br><br>
+
+            <label for="TelefoneResid">Telefone Residencial:</label>
+            <input type="text" name="TelefoneResid" id="TelefoneResid">
+
+            <label for="TelefoneCell">Telefone Celular:</label>
+            <input type="text" name="TelefoneCell" id="TelefoneCell"> 
+            <br><br>
+
+            <label>Sexo:</label> 
+            <br>
+            <input type="radio" name="sexo" id="sexo_m" value="M">
+            <label for="sexo_m">Masculino</label>
+
+            <input type="radio" name="sexo" id="sexo_f" value="F">
+            <label for="sexo_f">Feminino</label>
+
+            <input type="radio" name="sexo" id="sexo_o" value="O">
+            <label for="sexo_o">Outro</label>
+            <br><br>
+            
+            <label>Estado Civil:</label> 
+            <br>
+            <input type="radio" name="estadocivil" id="estado_solteiro" value="S">
+            <label for="estado_solteiro">Solteiro(a)</label>
+
+            <input type="radio" name="estadocivil" id="estado_casado" value="C">
+            <label for="estado_casado">Casado(a)</label>
+
+            <input type="radio" name="estadocivil" id="estado_divorciado" value="D">
+            <label for="estado_divorciado">Divorciado(a)</label>  
+            <br><br>
+
+            <label for="datadenascimento">Data de nascimento:</label>
+            <input type="date" name="datadenascimento" id="datadenascimento">
+            <br><br>
+        </form>
+    </div>
 </body>
 </html>

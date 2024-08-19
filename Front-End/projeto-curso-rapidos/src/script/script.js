@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       '<h2>Compra Confirmada</h2>' +
                       '<p>Sua compra foi realizada com sucesso!</p>' +
                       '<p>Obrigado por adquirir nosso curso.</p>' +
+                      '<a href="../../../formulario/index.html" style="color: #007bff; text-decoration: underline;">Ir para o Formulário de Matrícula</a>' + 
                       '</div>';
     modal.querySelector('div').appendChild(closeButton);
     document.body.appendChild(modal);
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     closeButton.addEventListener('click', function() {
         modal.style.display = 'none';
     });
+    
 
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
