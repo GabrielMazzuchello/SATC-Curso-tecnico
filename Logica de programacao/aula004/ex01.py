@@ -24,7 +24,8 @@ def areaTriangulo():
 while True:
     print("""1 - Área do círculo
 2 - Área do retângulo
-3 - Área do triângulo""")
+3 - Área do triângulo
+4 - Sair """)
     menu = int(input('-> '))
 
     if menu == 1:
@@ -33,4 +34,6 @@ while True:
         areaRetangulo()
     elif menu == 3:
         areaTriangulo()
+    elif menu == 4:
+        break
 
