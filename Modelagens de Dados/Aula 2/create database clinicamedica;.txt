@@ -67,9 +67,9 @@ insert into convenio(codconvenio, descricao, tipo) values (1,"convenio para trat
 insert into convenio(codconvenio, descricao, tipo) values (2,"convenio para concientização das drogas", "coletivo");
 insert into convenio(codconvenio, descricao, tipo) values (3,"convenio para tratamento", "coletivo");
 
-insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (10101, "consulta para exame", "exame", 16/01/2019, "encaminhado", 1);
-insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (10202, "consulta para remedio", "exame", 05/10/2024, "encaminhado", 2);
-insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (30333, "consulta para exame", "exame", 06/04/2022, "encaminhado", 3);
+insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (10101, "consulta para exame", "exame",  2019/01/16, "encaminhado", 1);
+insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (10202, "consulta para remedio", "exame", 2024/10/05, "encaminhado", 2);
+insert into exame(codexame, descricao, tipo, data, resultado, codconsulta) values (30333, "consulta para exame", "exame", 2022/04/06, "encaminhado", 3);
 
 insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (1,"Gabriel", "poço 8", 96373641, "içara", "SC" "Oftalmologista");
 insert into medico(codmedico, nome, endereco, telefone,cidade,estado,especialidade) values (2,"Vitor", "poço 3", 99834733, "criciuma", "SC" "Pneumologista");
@@ -87,3 +87,23 @@ insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, co
 insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, codmedico) values (2, '2024-08-16', '14:30:00', 'Consulta de emergência', 2, 102, 203);
 
 insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, codmedico) values (3, '2024-08-17', '11:00:00', 'Consulta especializada', 3, 103, 204);
+
+
+
+
+-----------------------------UPDATE-------------------------
+altera itens da tabela
+
+UPDATE convenio set descricao = "Plano Unimed"
+where codigo = 1;
+
+UPDATE paciente set endereco = "Av. paulista", cidade="Criciuma"
+where codpaciente = 1;
+
+-----------------------------DELETE-------------------------
+excluir tabelas
+
+
+delete from exame
+where codexame = 10101;
+
