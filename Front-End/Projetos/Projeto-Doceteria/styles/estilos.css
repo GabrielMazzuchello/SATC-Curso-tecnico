@@ -2,6 +2,7 @@ body {
     background-image: url(../imagens/doces-chocolate-coração-fundo-90520396.jpg);
     background-size: cover;
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -75,6 +76,16 @@ body {
     background-color: #f1cce4;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.Logo {
+    width: 125px;
+    height: 125px;
+}
+
+
+.texto {
+    font-size: 22px;
 }
 
 .site-footer {
