@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <title>Sonhos de Açúcar</title>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="cabecalho">
+            <div class="Logo"><img src="imagens/Logo.png" alt=""></div>
+            <div id="conteudo_cabecalho">
+                <div>
+                    <h1>Sonhos de Açúcar</h1>
+                </div>
+                <nav id="navegacao">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="">Doces</a></li>
+                        <li><a href="">Encomendas</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            </div>
+            
+        <div id="corpo">
+            <div id="div_vazia"></div>
+            <div id="conteudo">
+                <div class="form-container">
+                    <h2>INFORMAÇÕES CLIENTES</h2>
+                    <form name="INFORMAÇÕES CLIENTES">
+                        <label for="nome">Nome:</label> 
+                        <input type="text" name="nome" id="nome" required> 
+                        <br><br>
+
+                        <label for="Endereco">Endereço:</label> 
+                        <input type="text" name="Endereco" id="Endereco" required> 
+
+                        <label for="Bairro">Bairro:</label> 
+                        <input type="text" name="Bairro" id="Bairro" required> 
+                        <br><br>
+            
+                        <label for="Cidade">Cidade:</label> 
+                        <input type="text" name="Cidade" id="Cidade" required> 
+
+                        <label for="estado">Estado:</label>
+                        <select name="estado" id="estado" required>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="PR">Paraná</option>
+                            <option value="GO">Goiás</option>
+                            <option value="SP">São Paulo</option>
+                        </select> 
+                        <br><br>
+
+                        <label for="CEP">CEP:</label>
+                        <input type="text" name="CEP" id="CEP" size="8" required>
+
+                        <label for="E-mail">E-mail:</label>
+                        <input type="text" name="E-mail" id="E-mail" >
+                        <br><br>
+
+                        <label for="CPF">CPF:</label>
+                        <input type="text" name="CPF" id="CPF" size="11"> 
+
+                        <label for="RG">RG:</label>
+                        <input type="text" name="RG" id="RG" size="8"> 
+                        <br><br>
+
+                        <label for="TelefoneResid">Telefone Residencial:</label>
+                        <input type="text" name="TelefoneResid" id="TelefoneResid">
+
+                        <label for="TelefoneCell">Telefone Celular:</label>
+                        <input type="text" name="TelefoneCell" id="TelefoneCell"> 
+                        <br><br>
+
+                        <h2>INFORMAÇÕES ENCOMENDAS</h2>
+
+                        <label for="Data_de_entrega">Data de entrega:</label>
+                        <input type="date" name="Data_de_entrega" id="Data_de_entrega">
+
+                        <label for="Horário_Entrega">Horário Entrega</label>
+                        <input type="time" name="Horário_Entrega" id="Horário_Entrega">
+                        <br><br>
+                        
+                        <label for="Tipo_Evento">Tipo Evento:</label>
+                        <select name="Tipo_Evento" id="Tipo_Evento">
+                            <option value="AN">Aniversário</option>
+                            <option value="CA">Casamento</option>
+                        </select>
+
+                        <label for="Tipo_doce">Tipo Evento:</label>
+                        <select name="Tipo_doce" id="Tipo_doce">
+                            <option value="BL">Bolo</option>
+                            <option value="DO">Donuts</option>
+                            <option value="MU">Muffins</option>
+                        </select>
+                        <br><br>
+
+                        <label for="Quanti_doces">Quantidade de doces</label>
+                        <input type="text" name="Quanti_doces" id="Quanti_doces"> 
+                        <br><br>
+                        
+                        <button type="reset" class="toggle-button">Limpar</button>
+                        <button type="submit" class="toggle-button">Enviar</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+        <footer class="site-footer">
+            <p>&copy; 2024 Minha Empresa. Todos os direitos reservados.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

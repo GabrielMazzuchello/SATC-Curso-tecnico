@@ -1,5 +1,5 @@
 body {
-    background-image: url(../doces-chocolate-coração-fundo-90520396.jpg);
+    background-image: url(../imagens/doces-chocolate-coração-fundo-90520396.jpg);
     background-size: cover;
 }
 .container {
@@ -22,8 +22,8 @@ body {
     background-color: hsl(209, 59%, 81%);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    padding: 5px;
+    margin: 0px;
+    padding: 0px;
 }
 
 #conteudo_cabecalho {
@@ -72,7 +72,7 @@ body {
     border: 1px solid #000000;
     margin: 10px;   
     padding: 15px;
-    background-color: #FFC8A2;
+    background-color: #f1cce4;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
