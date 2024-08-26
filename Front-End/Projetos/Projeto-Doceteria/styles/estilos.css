@@ -1,0 +1,113 @@
+body {
+    background-image: url(../doces-chocolate-coração-fundo-90520396.jpg);
+    background-size: cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #b3b3b3;
+}
+
+#corpo {
+    display: flex;
+    align-items: flex-start;
+}
+
+#cabecalho {
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    background-color: hsl(209, 59%, 81%);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 5px;
+}
+
+#conteudo_cabecalho {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navegacao ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navegacao li {
+    margin: 0 15px;
+}
+#navegacao a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    padding: 10px 45px;
+    display: block;
+}
+
+#navegacao a:hover{
+    text-decoration: none;
+    color: #e05744;
+    font-size: 24px;
+    padding: 10px 45px;
+    display: block;
+}
+
+#div_vazia {
+    height: 725px;
+    width: 1000px;
+}
+
+#conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000000;
+    margin: 10px;   
+    padding: 15px;
+    background-color: #FFC8A2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer {
+    background-color: #333;      
+    color: white;               
+    padding: 20px;                
+    text-align: center;           
+    position: relative;           
+    bottom: 0;                    
+    width: 100%;                  
+}
+
+.site-footer p {
+    margin: 0;                    
+}
+
+.site-footer nav ul {
+    list-style: none;             
+    padding: 0;                  
+    margin: 10px 0 0 0;     
+}
+
+.site-footer nav ul li {
+    display: inline;              
+    margin: 0 15px;             
+}
+
+.site-footer nav ul li a {
+    color: #fff;                  
+    text-decoration: none;        
+}
+
+.site-footer nav ul li a:hover {
+    text-decoration: underline;   
+}
+
