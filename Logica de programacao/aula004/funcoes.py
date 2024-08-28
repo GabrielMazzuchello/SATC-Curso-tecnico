@@ -23,7 +23,7 @@ soma(valor1, valor2) """
         print(s)
 soma(10,20,5,7,9) """
 
-""" def pessoas(**kwargs):
+"""def pessoas(**kwargs):
     for chave, valor in kwargs.items():
         print(f'{chave}: {valor}')
     
@@ -52,7 +52,7 @@ print(f'o resultado da soma é {soma} e da multiplicação {multiplicacao}') """
 n = int(input('informe um numero: ')) 
 print(par(n)) """
 
-""" def soma(a=0,b=0):
+def soma(a=0,b=0):
     global s
     s = a + b
     return s
@@ -61,5 +61,6 @@ valor1 = float(input('Informe um valor: '))
 valor2 = float(input('Informe um valor: '))
 
 print(soma(valor1, valor2))
-print(s) """
+print(s) 
+
 
