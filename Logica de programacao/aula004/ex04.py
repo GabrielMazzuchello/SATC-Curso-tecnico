@@ -1,6 +1,9 @@
 """Crie um aplicativo de agenda de contatos que permita ao usuário adicionar, visualizar, editar e
 excluir contatos. Cada operação deve ser realizada por uma função nomeada separada, e o
-programa deve gerenciar os contatos utilizando essas funções."""
+programa deve gerenciar os contatos utilizando essas funções.
+
+fazendo
+"""
 
 
 def addContato():
