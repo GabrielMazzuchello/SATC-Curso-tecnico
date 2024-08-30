@@ -61,6 +61,28 @@ foreign key (codconvenio) references convenio(codconvenio),
 foreign key (codmedico) references medico(codmedico)
 );
 
+
+create table medicamentos(
+codigo int(5) not null,
+nome varchar(50) not null,
+laboratorio varchar(50) not null,
+tipo varchar(50) not null,
+indicacao varchar(50) not null,
+primary key (codigo));
+
+create table tratamento(
+codtratamento int(5) not null,
+descricao varchar(50) not null,
+dataimicio date not null,
+datafim date not null,
+codpaciente int(5) not null,
+codmedicamento int(5) not null,
+observacoes varchar(50) not null,
+primary key (codtratamento),
+foreign key (codpaciente) references paciente(codpaciente),
+foreign key (codmedicamento) references medicamento(codmedicamento));
+
+
 // inserts
 
 insert into convenio(codconvenio, descricao, tipo) values (1,"convenio para tratamento de cancer", "coletivo");
@@ -87,6 +109,11 @@ insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, co
 insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, codmedico) values (2, '2024-08-16', '14:30:00', 'Consulta de emergência', 2, 102, 203);
 
 insert into consulta(codconsulta, data, hora, tipo, codpaciente, codconvenio, codmedico) values (3, '2024-08-17', '11:00:00', 'Consulta especializada', 3, 103, 204);
+
+insert into medicamento(codmedicamento, nome, laboratorio, tipo, indicacao) values (1, 'Diporona', 'CIMED', 'Comprimido', 'dor e febre');
+insert into medicamento(codmedicamento, nome, laboratorio, tipo, indicacao) values (2, 'Aspirina', 'BAYER', 'Comprimido', 'dor de cabeça');
+insert into medicamento(codmedicamento, nome, laboratorio, tipo, indicacao) values (3, 'Dicoflenaco 250mg', 'CIMED', 'Pomada', 'dor dor moscular e contuzão');
+
 
 
 
