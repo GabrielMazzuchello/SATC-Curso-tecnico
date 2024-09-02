@@ -19,10 +19,10 @@ body {
 #cabecalho {
     display: flex;
     flex-direction: inherit;
-    align-items: center;
+    justify-content: center;
     background-color: hsl(209, 59%, 81%);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset -12px 9px 20px 2px rgba(0, 0, 0, 0.1);
     margin: 0px;
     padding: 0px;
 }
@@ -102,13 +102,15 @@ body {
 }
 
 .site-footer {
+    border-radius: 8px;
     background-color: #333;      
     color: white;               
-    padding: 20px;                
+    padding: 5px;               
     text-align: center;           
     position: relative;           
     bottom: 0;                    
-    width: 100%;                  
+    width: 100%;
+                      
 }
 
 .site-footer p {
@@ -156,7 +158,6 @@ body {
     font-weight: bold;
 }
 
-.form-group input, 
 .form-group select {
     padding: 10px;
     border: 1px solid #ccc;
@@ -185,7 +186,7 @@ body {
 
 /* Parte da CSS dos doces */
 
-.doces-container {
+#doces-container {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -196,14 +197,17 @@ body {
     text-align: center;
 }
 
-.doces-tipo {
-    margin-bottom: 30px;
-}
-
-.doces-tipo h3 {
+#doces-container h3 {
     margin-bottom: 15px;
     font-size: 24px;
     color: #e05744;
+}
+
+.doces-tipo {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 
 .doces-item {
