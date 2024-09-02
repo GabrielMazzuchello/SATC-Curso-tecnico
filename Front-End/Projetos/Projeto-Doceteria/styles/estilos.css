@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: inherit;
     justify-content: center;
-    background-color: hsl(209, 59%, 81%);
+    background-color: #FFC0CB;
     border-radius: 8px;
     box-shadow: inset -12px 9px 20px 2px rgba(0, 0, 0, 0.1);
     margin: 0px;
@@ -63,7 +63,7 @@ body {
 }
 
 #navegacao a:hover {
-    color: #e05744;
+    color: #FFFACD;
 }
 
 #div_vazia {
@@ -78,7 +78,7 @@ body {
     border: 1px solid #000000;
     margin: 10px;   
     padding: 15px;
-    background-color: #f1cce4;
+    background-color: #ADD8E6;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -101,10 +101,10 @@ body {
     font-size: 22px;
 }
 
-.site-footer {
+#site-footer {
     border-radius: 8px;
-    background-color: #333;      
-    color: white;               
+    background-color: #d6d6faf6;      
+    color: #000000;               
     padding: 5px;               
     text-align: center;           
     position: relative;           
@@ -113,38 +113,58 @@ body {
                       
 }
 
-.site-footer p {
+#site-footer p {
     margin: 0;                    
 }
 
-.site-footer nav ul {
+#site-footer nav ul {
     list-style: none;             
     padding: 0;                  
     margin: 10px 0 0 0;     
 }
 
-.site-footer nav ul li {
+#site-footer nav ul li {
     display: inline;              
     margin: 0 15px;             
 }
 
-.site-footer nav ul li a {
-    color: #fff;                  
+#site-footer nav ul li a {
+    color: #000000;                  
     text-decoration: none;        
 }
 
-.site-footer nav ul li a:hover {
+#site-footer nav ul li a:hover {
     text-decoration: underline;   
 }
 
-.form-container {
+#form-container {
     width: 100%;
-    max-width: 600px; /* Define um tamanho máximo para o formulário */
+    max-width: 600px; 
     margin: 0 auto;
     padding: 20px;
-    background-color: #f1cce4;
+    background-color: #ADD8E6;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    background-color: #cee0e6fb;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+select:hover {
+    background-color: #5e5eb8;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea {
+    background-color: #cee0e6fb;
+    border: 1px solid;
+    border-radius: 5px;
 }
 
 .form-group {
@@ -191,7 +211,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f1cce4;
+    background-color: #ADD8E6;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
