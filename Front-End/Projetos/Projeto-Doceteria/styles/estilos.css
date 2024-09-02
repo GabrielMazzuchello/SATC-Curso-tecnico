@@ -42,23 +42,28 @@ body {
     margin: 0;
 }
 
-#navegacao li {
-    margin: 0 15px;
+#navegacao ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+#navegacao li {
+    margin: 0 10px; /* Diminuído para ajustar o espaçamento */
+}
+
 #navegacao a {
     text-decoration: none;
     color: #333;
-    font-size: 24px;
-    padding: 10px 45px;
+    font-size: 18px; /* Reduzido o tamanho da fonte */
+    padding: 5px 20px; /* Reduzido o padding para diminuir a barra */
     display: block;
 }
 
-#navegacao a:hover{
-    text-decoration: none;
+#navegacao a:hover {
     color: #e05744;
-    font-size: 24px;
-    padding: 10px 45px;
-    display: block;
 }
 
 #div_vazia {
@@ -76,6 +81,14 @@ body {
     background-color: #f1cce4;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#conteudo_encomenda_doces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;   
+    padding: 15px;
 }
 
 .Logo {
@@ -122,3 +135,93 @@ body {
     text-decoration: underline;   
 }
 
+.form-container {
+    width: 100%;
+    max-width: 600px; /* Define um tamanho máximo para o formulário */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1cce4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Alinha os inputs ao tamanho do container */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    background-color: #e05744;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #d04d3c;
+}
+
+/* Parte da CSS dos doces */
+
+.doces-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1cce4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.doces-tipo {
+    margin-bottom: 30px;
+}
+
+.doces-tipo h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #e05744;
+}
+
+.doces-item {
+    display: inline-block;
+    width: 45%;
+    margin: 0 2.5%;
+    text-align: center;
+}
+
+.doces-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.doces-item p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
