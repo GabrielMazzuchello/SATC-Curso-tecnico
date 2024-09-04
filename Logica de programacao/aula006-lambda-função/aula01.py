@@ -65,9 +65,10 @@ print(list(filter(lambda x : x % 2 == 0, numbers)))"""
 
 print(list(filter(lambda x : 'a' in x, names)))"""
 
+# =========================================================================
 # cusando o MAP
 
-numbers = [
+"""numbers = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 ]
 
@@ -86,5 +87,16 @@ print(list(map(lambda x : len(x), (names))))
 ordered = sorted(names, key=lambda x : len(x)) # muda o filtro para o tamanho de cada palavra
 ordered = sorted(names, key=len) # mesma coisa que a linha anterior
 ordered = sorted(names, reverse=True, key=len) # tudo igual só que reverso 
-print(ordered)
+print(ordered)"""
 
+# =========================================================================
+            # função reduce() importar ela de functools
+
+import functools
+
+numbers = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+]
+
+print(functools.reduce(lambda x,y: x+y, numbers))
+print(functools.reduce(lambda x,y: x if x < y else y, numbers))
