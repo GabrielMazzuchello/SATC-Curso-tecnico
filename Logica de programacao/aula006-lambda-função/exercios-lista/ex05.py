@@ -9,4 +9,5 @@ for c in range(5):
 
 numDivisiv = list(filter(lambda x : x % 5 == 0, listaNumeros))
 print(numDivisiv)
+
     
