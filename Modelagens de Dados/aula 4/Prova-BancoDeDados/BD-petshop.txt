@@ -1,0 +1,133 @@
+create database petshop;
+
+create table clientes(
+codigo int(5) not null,
+cpf int(11) not null,
+nome varchar(50) not null,
+endereco varchar(50) not null,
+bairro varchar(50) not null,
+cidade varchar(50) not null,
+estado varchar(50) not null,
+telefone int(11) not null,
+primary key (codigo));
+
+
+create table funcionario(
+codigo int(5) not null,
+cpf int(11) not null,
+nome varchar(50) not null,
+endereco varchar(50) not null,
+cidade varchar(50) not null,
+estado varchar(50) not null,
+telefone int(11) not null,
+cargo varchar(50) not null,
+salario float(7,2) not null,
+primary key (codigo));
+
+create table animais(
+codigo int(5) not null,
+nomeanimal varchar(50) not null,
+raca varchar(50) not null,
+especie varchar(50) not null,
+peso float(5,2) not null,
+altura float(5,2) not null,
+cor varchar(50) not null,
+idade int(3) not null,
+primary key (codigo)
+foreign key (codcliente) references cliente(codigo));
+
+
+create table atendimento(
+codigo int(5) not null,
+data date not null,
+hora time not null,
+codfuncionario int(5) not null,
+codcliente int(5) not null,
+codanimais int(5) not null,
+tipo varchar(50) not null,
+valor float(6,2) not null,
+primary key (codigo),
+foreign key (codfuncionario) references funcionario(codigo),
+foreign key (codcliente) references cliente(codigo),
+foreign key (codanimais) references animais(codigo));
+
+=====================================================================================================
+
+insert into clientes(codigo, cpf, nome, endereco, bairro, cidade, estado, telefone) value(1, 111111, "gabriel", "icr-333", "Poço-8", "içara", "Santa Catarina", 48999999);
+
+insert into clientes(codigo, cpf, nome, endereco, bairro, cidade, estado, telefone) value(2, 222222, "vitor", "icr-666", "rio", "içara", "Rio de Janeiro", 783333333);
+
+insert into clientes(codigo, cpf, nome, endereco, bairro, cidade, estado, telefone) value(3, 222222, "joao", "icr-999", "naosei", "São Paulo", "São Paulo", 43888888);
+
+=====================================================================================================
+
+insert into animais(codigo, nomeanimal, raca, especie, peso, altura, cor, idade) values(1, "boo", "pitbul", "aaaaaa", 44.4, 53.5, "amarelo", 3);
+insert into animais(codigo, nomeanimal, raca, especie, peso, altura, cor, idade) values(2, "jjjj", "dogo argentino", "bbbbbb", 50.4, 59.5, "laranja", 4);
+insert into animais(codigo, nomeanimal, raca, especie, peso, altura, cor, idade) values(3, "bbb", "jjjjj", "ccccc", 66, 67, "cinza", 5);
+
+
+=====================================================================================================
+insert into funcionario(codigo, cpf, nome, endereco, cidade, estado, telefone, cargo, salario) values(1, 111111, "gabriel", "icr-33", "Icara", "Santa catarina", 5599999, "atendente", 2100.00);
+insert into funcionario(codigo, cpf, nome, endereco, cidade, estado, telefone, cargo, salario) values(2, 222222, "danilo", "icr-99", "criciuma", "Santa catarina", 5599999, "banhista", 2100.00);
+insert into funcionario(codigo, cpf, nome, endereco, cidade, estado, telefone, cargo, salario) values(3, 333333, "daniel", "sc-111", "criciuma", "Santa catarina", 489999, "tosador", 3000.00);
+
+=====================================================================================================
+
+insert into atendimento(codigo, data, hora, codfuncionario, codcliente, codanimal, tipo, valor) values(1, "2024-01-01", "15:00:00", 1, 1, 2, "banho", 150.00);
+insert into atendimento(codigo, data, hora, codfuncionario, codcliente, codanimal, tipo, valor) values(2, "2024-01-02", "13:00:00", 2, 2, 3, "tosa", 100.00);
+insert into atendimento(codigo, data, hora, codfuncionario, codcliente, codanimal, tipo, valor) values(3, "2024-01-03", "12:00:00", 3, 3, 3, "banho e tosa", 300.00);
+
+
+=====================================================================================================
+
+select nome from clientes order by nome;
+
+select codigo, nomeanimal, raca, especie, peso from animais where raca = "pitbul" and especie = "aaaaaa"; 
+
+select cpf, nome, cargo, salario from funcionario where cargo = "tosador" or cargo = "atendente";
+
+select codigo, data, hora, tipo, valor from atendimento where codigo = 2 and data = "2024/01/02"
+
+select codigo, cpf, nome, endereco, bairro, cidade, estado, telefone from clientes where cidade = "içara" and bairro = 'Poço-8';
+
+select codigo, nomeanimal, raca, especie, peso, altura, cor, idade from animais where idade > 4 and peso > 15;
+
+select sum(valor) from atendimento;
+
+select avg(valor) from atendimento;
+
+select min(peso), max(peso) from animais;
+
+select codigo, data, hora, codanimal, valor from atendimento where data > "2024/01/01" and data < "2024/01/30" and codfuncionario = 2;
+
+select codigo, data, hora, valor from atendimento where data > "2024/01/01" and data < "2024/12/31" and codcliente = 3;
+
+select codigo, data, hora, codfuncionario, valor from atendimento where valor > 100 and codanimal = 3 and codcliente = 3;
+
+select codigo, data, hora, valor from atendimento where valor > 100 and codanimal = 1 and codcliente = 3;
+
+select codigo, data, hora, valor from atendimento where data >= "2024/01/01" and data <= "2024/01/30" and codanimal = 2 and codcliente = 2 and codfuncionario = 3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
