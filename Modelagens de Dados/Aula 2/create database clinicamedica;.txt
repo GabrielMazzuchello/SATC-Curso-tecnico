@@ -122,7 +122,7 @@ insert into medicamento(codmedicamento, nome, laboratorio, tipo, indicacao) valu
 altera itens da tabela
 
 UPDATE convenio set descricao = "Plano Unimed"
-where codigo = 1;
+where codconvenio = 1;
 
 UPDATE paciente set endereco = "Av. paulista", cidade="Criciuma"
 where codpaciente = 1;
