@@ -21,17 +21,23 @@
 
 .menu_navegacao a {
     text-decoration: none;
-    color: #392fd1;
+    color: #9c95ff;
     font-size: 20px; 
     padding: 5px 20px; 
+    margin: 5px;
     display: block;
+    background-color: #802727;
+    border-radius: 10px;
 }
 .menu_navegacao a:hover {
     text-decoration: none;
-    color: #ff4800; 
+    color: #2600fd; 
     font-size: 30px; 
     padding: 5px 20px; 
     display: block;
+}
+.container_menu {
+    width: 900px;
 }
 
 body {
