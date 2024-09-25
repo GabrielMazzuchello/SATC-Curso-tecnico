@@ -1,0 +1,47 @@
+#head{
+    display: flex;
+    flex-direction: row;
+    max-width: auto;
+    max-height: 150px;
+    padding: 5px;
+}
+.logo img {
+    filter: drop-shadow(7px -7px 7px #000);
+    width:  550px;
+    height: 150px;
+}
+.menu_navegacao ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    height: 125px;
+    padding: 0;
+}
+
+.menu_navegacao a {
+    text-decoration: none;
+    color: #9c95ff;
+    font-size: 20px; 
+    padding: 5px 20px; 
+    margin: 5px;
+    display: block;
+    background-color: #802727;
+    border-radius: 10px;
+}
+.menu_navegacao a:hover {
+    text-decoration: none;
+    color: #2600fd; 
+    font-size: 30px; 
+    padding: 5px 20px; 
+    display: block;
+}
+.container_menu {
+    width: 900px;
+}
+
+body {
+    background-image: url(../Imagens/SkilletPlanoFundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
