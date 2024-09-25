@@ -54,12 +54,8 @@ while True:
             print('O codigo do carro não existe')
     
     elif opcao == 4:
-        codigoPesquisa = int(input('Informe o codigo do carro que queira pesquisar: '))
-
-        if codigoPesquisa in MatCarros:
-           print('Os dados do carro:')
-           for lista in MatCarros[codigoPesquisa]:
-               print(f'{codigoPesquisa} Marca: {lista[0]}\nNome: {lista[1]}\nAno: {lista[2]}\nCor: {lista[3]}')    
+        for i in sorted(MatCarros):
+            print(f'Codigo: {i} Informação: {MatCarros[i]}')
 
     elif opcao == 5:
         break
