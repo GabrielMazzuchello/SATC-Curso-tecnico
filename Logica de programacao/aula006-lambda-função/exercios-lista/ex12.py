@@ -14,7 +14,7 @@ while True:
     produto = float(input('Informe o valor do produto: '))
     produtos.append(produto)
 
-Verifica a quantidade de produtos e aplica o desconto correto
+# Verifica a quantidade de produtos e aplica o desconto correto
     if len(produtos) >= 15:
         # Desconto de 35% para 15 ou mais produtos
         print(aplica_desconto(produtos, 0.35))
