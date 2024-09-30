@@ -1,15 +1,33 @@
-#head{
+#body_home {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../Imagens/SkilletPlanoFundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#head {
     display: flex;
     flex-direction: row;
-    max-width: auto;
-    max-height: 150px;
+    width: 100%;
     padding: 5px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro e transparente */
 }
+
 .logo img {
     filter: drop-shadow(7px -7px 7px #000);
-    width:  550px;
+    width: 550px;
     height: 150px;
 }
+
 .menu_navegacao ul {
     display: flex;
     flex-direction: row;
@@ -21,27 +39,71 @@
 
 .menu_navegacao a {
     text-decoration: none;
-    color: #9c95ff;
+    color: white; /* Texto branco */
     font-size: 20px; 
-    padding: 5px 20px; 
+    padding: 10px 20px; 
     margin: 5px;
     display: block;
-    background-color: #802727;
+    background-color: #b22222; /* Vermelho escuro */
     border-radius: 10px;
 }
+
 .menu_navegacao a:hover {
     text-decoration: none;
-    color: #2600fd; 
-    font-size: 30px; 
-    padding: 5px 20px; 
-    display: block;
+    color: #ffcc00; /* Amarelo claro ao passar o mouse */
+    font-size: 22px; 
 }
+
 .container_menu {
     width: 900px;
 }
 
-body {
-    background-image: url(../Imagens/SkilletPlanoFundo.jpg);
+#conteudo {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a área de conteúdo */
+    padding: 20px;
+    margin: 10px;
+    max-width: 700px;
+    font-size: 20px;
+    color: white; /* Texto branco */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* CSS da Discografia =====================================================================*/
+#body_discografia {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo_discografia {
+    margin: 15px;
+    max-width: 75%; /* Limite a largura */
+    align-items: center;
+    display: flex; /* Adicione flex para permitir alinhamento */
+    flex-direction: column; /* Mantenha os elementos em coluna */
+}
+
+#discografia {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os álbuns */
+    flex-direction: row;
+}
+
+.img_album {
+    width: 350px;
+    height: 350px;
+}
+
+.album {
+    margin: 5px;
 }
