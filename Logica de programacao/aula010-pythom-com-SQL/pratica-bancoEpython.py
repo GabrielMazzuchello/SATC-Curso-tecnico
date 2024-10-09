@@ -48,7 +48,6 @@ while True:
         cursor.execute(comando)
         dados_tabela = cursor.fetchall()
         print(f'ID: {dados_tabela[codigo-1][0]} nome: {dados_tabela[codigo-1][1]} telefone: {dados_tabela[codigo-1][2]} CPF: {dados_tabela[codigo-1][3]} cidade: {dados_tabela[codigo-1][4]}')
-        os.system('cls')
 
     elif op == 5:
         os.system('cls')
