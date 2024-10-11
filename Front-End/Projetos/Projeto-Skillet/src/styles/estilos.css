@@ -1,47 +1,216 @@
-#head{
+#body_home {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../Imagens/SkilletPlanoFundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@font-face {
+    font-family: batman-forever;
+    src: url(../font/batman_forever/batmfa__.ttf);
+}
+
+#head {
     display: flex;
     flex-direction: row;
-    max-width: auto;
-    max-height: 150px;
+    width: 100%;
     padding: 5px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro e transparente */
 }
+
 .logo img {
     filter: drop-shadow(7px -7px 7px #000);
-    width:  550px;
+    width: 550px;
     height: 150px;
 }
+
 .menu_navegacao ul {
+    font-family: batman-forever;
     display: flex;
     flex-direction: row;
     align-items: center;
     list-style: none;
     height: 125px;
-    padding: 0;
+    padding: 10;
 }
 
 .menu_navegacao a {
     text-decoration: none;
-    color: #9c95ff;
+    color: white; /* Texto branco */
     font-size: 20px; 
-    padding: 5px 20px; 
+    padding: 10px 20px; 
     margin: 5px;
     display: block;
-    background-color: #802727;
+    background-color: #b22222; /* Vermelho escuro */
     border-radius: 10px;
 }
+
 .menu_navegacao a:hover {
     text-decoration: none;
-    color: #2600fd; 
-    font-size: 30px; 
-    padding: 5px 20px; 
-    display: block;
+    color: #ffcc00; /* Amarelo claro ao passar o mouse */
+    font-size: 22px; 
 }
+
 .container_menu {
     width: 900px;
 }
 
-body {
-    background-image: url(../Imagens/SkilletPlanoFundo.jpg);
+#conteudo {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para a área de conteúdo */
+    padding: 20px;
+    margin: 10px;
+    max-width: 700px;
+    font-size: 20px;
+    color: white; /* Texto branco */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.texto {
+    cursor: default;
+}
+
+/* CSS da Discografia =====================================================================*/
+
+#body_discografia {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18182e;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo_discografia {
+    margin: 15px;
+    max-width: 75%; /* Limite a largura */
+    align-items: center;
+    display: flex; /* Adicione flex para permitir alinhamento */
+    flex-direction: column; /* Mantenha os elementos em coluna */
+}
+
+#discografia {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os álbuns */
+    flex-direction: row;
+}
+
+.img_album {
+    width: 350px;
+    height: 350px;
+}
+
+.album {
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto_albuns {
+    padding: 0;
+    margin: 0;
+    font-size: large;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* CSS da Agenda =====================================================================*/
+#body_agenda {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18182e;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+}
+#conteudo_agenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo_agenda h1 {
+    font-family: batman-forever;
+}
+.lista_agenda {
+    width: 1000px;
+}
+
+.item_agenda {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 5px 0;
+    font-size: 14px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    align-items: center;
+}
+.data {
+    font-weight: bold;
+    margin: 7px;
+    padding: 0;
+}
+.local {
+    margin: 7px;
+    padding: 0;
+}
+.banda {
+    margin: 7px;
+    padding: 0;
+}
+
+.botao_ingresso {
+    margin-right: 50px;
+    padding: 10px 20px;
+    background-color: #e05744;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 50%;
+    align-items: end;
+    justify-content: end;
+}
+.botao_ingresso a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.botao_ingresso:hover {
+    background-color: #d04d3c;
+}
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.info_evento {
+    width: 1000px;
 }
