@@ -12,9 +12,7 @@ cursor = conexao_banco.cursor()
 
 def addFuncionario():
     id = int(input('Informe o ID do funcionario: '))
-    nome = input('Informe o nome do funcionario: ')
-    cargo = input('Informe o cargo do funcionario: ')
-
+    
     # Verificar se o ID já existe
     comando = 'SELECT COUNT(*) FROM funcionario WHERE id = %s'
     cursor.execute(comando, (id,))
@@ -25,6 +23,8 @@ def addFuncionario():
         print('Erro: esse ID já está cadastrado')
     else:
         # Inserir o novo carro
+        nome = input('Informe o nome do funcionario: ')
+        cargo = input('Informe o cargo do funcionario: ')
         comando = 'INSERT INTO funcionario (id, nome, cargo) VALUES (%s, %s, %s)'
         cursor.execute(comando, (id, nome, cargo))
         conexao_banco.commit()
