@@ -1,0 +1,115 @@
+create database petshop2;
+
+create table cliente(
+codigo    int(5) not null,
+nome      varchar(50) not null,
+endereco  varchar(50) not null,
+bairro    varchar(50) not null,
+cidade    varchar(50) not null,
+estado    varchar(50) not null,
+telefone  int(11) not null,
+cpf       int(11) not null,
+primary key (codigo));
+
+
+create table animal(
+codigo     int(5) not null,
+nome       varchar(50) not null,
+raca       varchar(50) not null,
+especie    varchar(50) not null,
+peso       float(5,2)  not null,
+altura     float(5,2)  not null,
+cor        varchar(50) not null,
+idade      int(2)      not null,
+codcliente int(5)      not null, 
+primary key (codigo),
+foreign key (codcliente) references cliente(codigo));
+
+
+create table funcionario(
+codigo    int(5) not null,
+nome      varchar(50) not null,
+endereco  varchar(50) not null,
+cidade    varchar(50) not null,
+estado    varchar(50) not null,
+telefone  int(11) not null,
+cargo     varchar(50) not null,
+salario   float(8,2) not null,
+cpf       int(11) not null,
+primary key (codigo));
+
+
+create table atendimento(
+codigo         int(5)  not null,
+data           date    not null,
+hora           time    not null,
+tipo           varchar(50) not null,
+valor          float(8,2) not null,
+codfuncionario int(5) not null,
+codcliente     int(5) not null,
+codanimal      int(5) not null,
+primary key (codigo),
+foreign key (codfuncionario) references funcionario(codigo),
+foreign key (codcliente) references cliente(codigo),
+foreign key (codanimal) references animal(codigo));
+
+---------------------------------------
+
+insert into cliente(codigo, nome, endereco, bairro, cidade, estado, telefone,cpf) 
+values(1, "Andre", "Rua 123", "Centro", "Criciuma", "SC", 123,123);
+
+insert into cliente(codigo, nome, endereco, bairro, cidade, estado, telefone,cpf) 
+values(2, "Cris", "Rua 456", "Jardim Angelica", "Criciuma", "SC", 456,456);
+
+insert into cliente(codigo, nome, endereco, bairro, cidade, estado, telefone,cpf) 
+values(3, "Arthur", "Rua 789", "Prospera", "Criciuma", "SC", 678,678);
+
+----------------------------------------
+
+insert into funcionario(codigo, nome, endereco, cidade, estado, telefone,cargo,salario,cpf) 
+values(1, "Joao", "Rua 654",  "Criciuma", "SC", 123, "Atendente",1000.00,111);
+
+insert into funcionario(codigo, nome, endereco, cidade, estado, telefone,cargo,salario,cpf) 
+values(2, "Maria", "Rua 456", "Criciuma", "SC", 789, "Veterinario", 5000.00,222);
+
+insert into funcionario(codigo, nome, endereco, cidade, estado, telefone,cargo,salario,cpf) 
+values(3, "Jose", "Rua 789", "Criciuma", "SC", 456, "Tosador", 2000.00,333);
+
+----------------------------------------
+
+insert into animal(codigo, nome, raca, especie, peso, altura, cor, idade, codcliente) 
+values(1, "Chanel", "Buldogue", "Cão", 12.00, 45.00, "preto", 10, 1);
+
+insert into animal(codigo, nome, raca, especie, peso, altura, cor, idade, codcliente) 
+values(2, "Snoopy", "Fox Paulista", "Cão", 10.00, 40.00, "branco", 15, 1);
+
+insert into animal(codigo, nome, raca, especie, peso, altura, cor, idade, codcliente) 
+values(3, "Tom", "Siamês", "Gato", 4.00, 25.00, "Cinza", 5, 2);
+
+insert into animal(codigo, nome, raca, especie, peso, altura, cor, idade, codcliente) 
+values(4, "Nina", "Persa", "Gato", 5.00, 30.00, "Caramelo", 8, 3);
+
+
+----------------------------------------
+
+insert into atendimento(codigo, data, hora, tipo, valor, codfuncionario, codcliente, codanimal) 
+values(1, "2024/09/10", "10:30:00", "Banho", 50.00, 1, 1, 1);
+
+insert into atendimento(codigo, data, hora, tipo, valor, codfuncionario, codcliente, codanimal) 
+values(2, "2024/09/12", "14:30:00", "Vacina", 100.00, 1, 1, 1);
+
+insert into atendimento(codigo, data, hora, tipo, valor, codfuncionario, codcliente, codanimal) 
+values(3, "2024/09/12", "15:30:00", "Banho e Tosa", 100.00, 1, 1, 2);
+
+insert into atendimento(codigo, data, hora, tipo, valor, codfuncionario, codcliente, codanimal) 
+values(4, "2024/09/13", "10:00:00", "Banho e Tosa", 100.00, 1, 2, 1);
+
+insert into atendimento(codigo, data, hora, tipo, valor, codfuncionario, codcliente, codanimal) 
+values(5, "2024/09/13", "11:00:00", "Banho", 50.00, 1, 3, 1);
+
+----------------------------------------
+
+
+
+
+
