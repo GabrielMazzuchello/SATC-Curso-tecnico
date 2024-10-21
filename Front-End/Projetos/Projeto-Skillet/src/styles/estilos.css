@@ -41,23 +41,29 @@
     list-style: none;
     height: 125px;
     padding: 10;
+    gap: 20px;
 }
 
-.menu_navegacao a {
+.menu_navegacao ul li {
+    display: inline-block;
+}
+
+.menu_navegacao ul li a {
     text-decoration: none;
     color: white; /* Texto branco */
-    font-size: 20px; 
     padding: 10px 20px; 
     margin: 5px;
     display: block;
     background-color: #b22222; /* Vermelho escuro */
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
 .menu_navegacao a:hover {
     text-decoration: none;
     color: #ffcc00; /* Amarelo claro ao passar o mouse */
-    font-size: 22px; 
+    transform: scale(1.3);
+    text-decoration: none;
 }
 
 .container_menu {
@@ -96,6 +102,7 @@
 }
 
 #conteudo_discografia {
+    color: #e0e0e0a6;
     margin: 15px;
     max-width: 75%; /* Limite a largura */
     align-items: center;
@@ -213,4 +220,65 @@
 }
 .info_evento {
     width: 1000px;
+}
+/* CSS do historico =====================================================================*/
+#body_historico {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18182e;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+#conteudo_historico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    color: white; 
+    border-radius: 10px; 
+}
+
+/* CSS dos componentes =====================================================================*/
+
+#body_integrantes {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18182e;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+#conteudo_integrantes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+    color: white; 
+    border-radius: 10px; 
+
 }
