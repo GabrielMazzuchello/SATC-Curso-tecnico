@@ -282,3 +282,49 @@
     border-radius: 10px; 
 
 }
+
+/* CSS das fotos =====================================================================*/
+#body_fotos {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #18182e;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo_fotos {
+    color: #e0e0e0a6;
+    margin: 15px;
+    max-width: 75%; /* Limite a largura */
+    align-items: center;
+    display: flex; /* Adicione flex para permitir alinhamento */
+    flex-direction: column; /* Mantenha os elementos em coluna */
+}
+
+#fotografias {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os álbuns */
+    flex-direction: row;
+}
+
+.img_fotos {
+    width: 400px;
+    height: 400px;
+}
+
+.fotos {
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
