@@ -12,9 +12,7 @@ cursor = conexao_banco.cursor()
 
 def addProduto():
     id = int(input('Informe o ID do produto: '))
-    nome = input('Informe o nome do produto: ')
-    quantidade = int(input('Informe a quantidade do produto: '))
-
+    
     # Verificar se o ID já existe
     comando = 'SELECT COUNT(*) FROM produtos WHERE id = %s'
     cursor.execute(comando, (id,))
@@ -25,6 +23,8 @@ def addProduto():
         print('Erro: esse ID já está cadastrado')
     else:
         # Inserir o novo 
+        nome = input('Informe o nome do produto: ')
+        quantidade = int(input('Informe a quantidade do produto: '))
         comando = 'INSERT INTO produtos (id, nome, quantidade) VALUES (%s, %s, %s)'
         cursor.execute(comando, (id, nome, quantidade))
         conexao_banco.commit()

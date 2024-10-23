@@ -12,21 +12,22 @@ cursor = conexao_banco.cursor()
 
 def addProduto():
     id = int(input('Informe o ID: '))
-    nome = input('Informe o nome do cliente: ')
-    quarto = int(input('Informe o quarto do cliente: '))
-    data_entrada = input('Informe a data de entrada: ')
-    data_saida = input('Informe a data de saida: ')
 
     # Verificar se o ID já existe
     comando = 'SELECT COUNT(*) FROM produtos WHERE id = %s'
     cursor.execute(comando, (id,))
     resultado = cursor.fetchone()
+    
 
     if resultado[0] > 0:
         os.system('cls')
         print('Erro: esse ID já está cadastrado')
     else:
         # Inserir o novo 
+        nome = input('Informe o nome do cliente: ')
+        quarto = int(input('Informe o quarto do cliente: '))
+        data_entrada = input('Informe a data de entrada: ')
+        data_saida = input('Informe a data de saida: ')
         comando = 'INSERT INTO reservas (id, nome, quarto, data_checkin, data_checkout) VALUES (%s, %s, %s, %s, %s)'
         cursor.execute(comando, (id, nome, quarto, data_entrada, data_saida))
         conexao_banco.commit()
@@ -35,11 +36,11 @@ def addProduto():
 
 def excluir():
     id = int(input('Informe o ID da reserva que deseja excluir: '))
-    comando = 'DELETE FROM produtos WHERE id = %s'
+    comando = 'DELETE FROM reservas WHERE id = %s'
     cursor.execute(comando, (id,))
     conexao_banco.commit()
     os.system('cls')
-    print("Produto excluído com sucesso!")
+    print("Reserva excluída com sucesso!")
 
 def pesquisar():
     while True:
