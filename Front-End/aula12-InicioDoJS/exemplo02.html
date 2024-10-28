@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Exemplo Javascript</title>
+
+<script>
+
+function calcular() {
+
+var v1= eval(prompt("Digite valor1","v1"));
+var v2= eval(prompt("Digite valor2","v2"));
+var soma = v1 + v2;
+
+if (v1 != null &&  v2 != null) {
+
+document.getElementById("texto").innerHTML = "Total da soma valores: " + soma;
+
+}
+
+}
+
+</script>
+</head>
+
+<body>
+
+<h2> Exemplo com  prompt()</h2>
+
+<button onclick="calcular()">Clique para calcular</button>
+
+<p id="texto"></p>
+
+</body>
+
+</html>

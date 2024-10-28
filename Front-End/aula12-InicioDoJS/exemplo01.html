@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Exemplo Javascript</title>
+
+<script>
+
+function inserirNome() {
+
+var nome = prompt("Digite seu nome","nome");
+
+if (nome != null) {
+
+document.getElementById("texto").innerHTML = "Olá " + nome + "!!!!!!";
+
+}
+
+}
+
+</script>
+</head>
+
+<body>
+
+<h2> Exemplo com  prompt()</h2>
+
+<button onclick="inserirNome()">Clique para inserir seu nome</button>
+
+<p id="texto"></p>
+
+</body>
+
+</html>
