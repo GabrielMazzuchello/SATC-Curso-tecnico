@@ -8,7 +8,7 @@ import os
 conexao_banco = mysql.connector.connect (
     host="localhost",
     user = "root",
-    password = "",
+    password = "123456789",
     database = "imobiliaria"
 )
 
@@ -18,16 +18,17 @@ cursor = conexao_banco.cursor() # conexão do banco
 
 def addImovel(): # função de adicionar imovel
     id = int(input('Informe o id: '))
-    endereco = input('Informe o nome: ')
+    endereco = input('Informe o endereço: ')
     comando_endereco = f'SELECT * FROM imobiliaria.imoveis where endereco = "{endereco}";' # comando sql para  verificar o endereço
     cursor.execute(comando_endereco) # comando para execultar o comando no banco de dados
-    dados_nome = cursor.fetchall() # salva os item que retornou do banco em uma variavel (tupla)
+    dados_endereco = cursor.fetchall() # salva os item que retornou do banco em uma variavel (tupla)
 
     comando = f'SELECT * FROM imobiliaria.imoveis where id = {id};' # comando sql para  verificar o id
     cursor.execute(comando)
     dados = cursor.fetchall()
 
-    if len(dados) > 0 or endereco == dados_nome[0][1]:
+    print(dados_endereco)
+    if len(dados) > 0 or endereco == dados_endereco[0][1]:
         os.system('cls') # todos os  os.system('cls')  servem para limpar a tela
         print('Erro! esse id ou endereço já está sendo utilizado!')
 
