@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Cadastro</title>
+<link rel="stylesheet" type="text/css" href="css/Format_style.css">
+<script language="JavaScript">
+     function mask(t, mask)
+      {
+       var i = t.value.length;
+       var exit = mask.substring(1,0);
+       var text = mask.substring(i)
+     if (text.substring(0,1) != exit)
+     {
+       t.value += text.substring(0,1);
+     }
+   }
+</script>
+</head>
+<body>
+<h2>Formulário de Exemplo </h2>
+<form name="formulario" method="POST" action="">
+
+Nome: <input type="text" name="nome"  id="nome" size=50>
+<br><br>
+
+Endereço: <input type="text" name="endereco"  id="endereco" size=50>
+<br><br>
+
+Cidade: <input type="text" name="cidade"  id="cidade" size=50>
+<br><br>
+
+Estado: <input type="text" name="estado"  id="estado" size=50>
+<br><br>
+
+CEP: <input type="text" name="cep" placeholder="CEP" size="13" class="inputData" onkeypress="mask(this, '##.###-###')" maxlength="10"> 
+<br><br>
+
+Telefone Residencial: <input type="text" name="telefone" size="22"  class="inputData" placeholder="Telefone" onkeypress="mask(this, '## #####-####')" maxlength="13"> 
+
+Telefone Celular: <input type="text" name="telefone" size="22"  class="inputData" placeholder="Telefone" onkeypress="mask(this, '## #####-####')" maxlength="13"> 
+</form>
+
+</body>
+</html>
