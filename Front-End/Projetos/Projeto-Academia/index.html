@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Show</title>
+  <link rel="stylesheet" href="src/css/estilos.css">
+</head>
+<body>
+
+    <!-- Cabeçalho com link para inscrição -->
+    <header>
+        <h1>Bem-vindo ao nosso site!</h1>
+        <nav>
+            <a href="inscricao.html" class="inscricao-btn">Inscreva-se</a>
+        </nav>
+    </header>
+
+    <div id="slider">
+        <!-- Container do slider -->
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+            <div class="slide first">
+                <img src="src/imagens/modalidade-1.webp" alt="imagem 1">
+            </div>
+            <div class="slide">
+                <img src="src/imagens/modalidade-natacao-1.jpg" alt="imagem 2">
+            </div>
+            <div class="slide">
+                <img src="src/imagens/modalidade-1.webp" alt="imagem 3">
+            </div>
+
+            <div class="navgation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+    
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/javasript.js"></script>
+</body>
+</html>
