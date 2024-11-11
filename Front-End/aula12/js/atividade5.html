@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script language = "JavaScript"">
+        function calcular() {
+            var nome = prompt("Informe o nome: ");
+            var cargo = prompt("Informe o cargo: ");
+            var salario = eval(prompt("Informe o salario: "))
+
+            
+            if (salario != null) {
+                var salarioNovo = salario * 1.05
+                document.getElementById("texto").innerHTML = "O salario do funcionario, "+nome+" ficou:, " + salarioNovo;
+            }
+        }
+    </script>
+    <h2>Calcular aumento de salario</h2>
+    <button onclick="calcular()">Clique para calcular o aumento</button>
+    <p id = "texto"></p>
+    
+</body>
+</html>

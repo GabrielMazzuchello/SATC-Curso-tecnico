@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 6</title>
+</head>
+<body>
+    <script language = "JavaScript"">
+        function calcular() {
+            var base = eval(prompt("Digite a base do triângulo:", "base"));
+            var altura = eval(prompt("Digite a altura do triângulo:", "altura"));
+            var area = (base * altura) / 2
+            if (base != null && altura != null) {
+                document.getElementById("texto").innerHTML = "Area calculada: " + area;
+            }
+        }
+    </script>
+    <h2>Cálculo da área de um triângulo</h2>
+    <button onclick="calcular()">Clique para calcular</button>
+    <p id = "texto"></p>
+</body>
+</html>

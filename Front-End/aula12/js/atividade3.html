@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 3</title>
+</head>
+<body>
+    <script language = "JavaScript"">
+        function aluno() {
+            var nome = prompt("Digite o nome do aluno:", "nome");
+            var nota1 = eval(prompt("Digite a primeira nota:", "nota1"));
+            var nota2 = eval(prompt("Digite a segunda nota:", "nota2"));
+            var nota3 = eval(prompt("Digite a terceira nota:", "nota3"));
+            if (nome != null && nota1 != null && nota2 != null && nota3 != null) {
+                document.getElementById("texto").innerHTML = "Nome: " + nome + " Nota 1: " + nota1 + " Nota 2: " + nota2 + " Nota 3: " + nota3;
+            }
+        }
+    </script>
+    <h2>Calcular média</h2>
+    <button onclick="aluno()">Clique para calculara média do aluno</button>
+    <p id = "texto"></p>
+</body>
+</html>

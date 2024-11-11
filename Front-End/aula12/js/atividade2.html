@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 1</title>
+</head>
+<body>
+    <script language = "JavaScript"">
+        function calcular() {
+            var celsius = eval(prompt("Digite a temperatura:", "celsius"));
+            var fahrenheit = eval((9/5) * celsius + 32);
+            if (celsius != null) {
+                document.getElementById("texto").innerHTML = "Temperatura em fahrenheit:, " + fahrenheit;
+            }
+        }
+    </script>
+    <h2>Calcular</h2>
+    <button onclick="calcular()">Clique para calcular</button>
+    <p id = "texto"></p>
+</body>
+</html>
