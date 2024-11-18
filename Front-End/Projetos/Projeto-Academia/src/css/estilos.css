@@ -1,72 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
     text-align: center;
-  }
+}
 
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
 
+header nav a:hover {
+    text-decoration: underline;
+}
 
-#slider {
+main {
+    margin-top: 20px;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 800px;
-    height: 400px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide-container {
+    position: relative;
+    width: 80%;
+    height: 755px;
     overflow: hidden;
-
-}
-
-.slides {
-    width: 400%;
-    height: 400px;
-    display: flex;
-}
-
-.slides input {
-    display: none;   
+    margin-top: 20px;
 }
 
 .slide {
-    width: 25%;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
 }
 
 .slide img {
-    width: 800px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.manual-navigation {
-    position: relative;
-    width: 800px;
-    margin-top: -40px;
+form {
     display: flex;
-    justify-content: center
+    flex-direction: column;
+    gap: 10px;
 }
-.manual-btn{
-    border: 2px solid white;
-    padding: 5px;
-    border-radius: 10px;
+
+form label, form input, form select, form button {
+    width: 100%;
+    max-width: 300px;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
 }
 
-.manual-btn:not(:last-child){
-    margin-right: 40px;
+form button:hover {
+    background-color: #555;
 }
 
-.manual-btn:hover{
-    background-color: white;
+
+.field-group {
+    display: flex;
+    gap: 10px;
 }
 
-#radio1:checked ~ .first{
-    margin-left: 0;
+.field-group input, .field-group select {
+    flex: 1;
 }
 
-#radio2:checked ~ .first{
-    margin-left: -25%;
-}
-
-#radio3:checked ~ .first{
-    margin-left: -50%;
+.form-error {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
 }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Academia</title>
+    <a href="src/css/estilos.css"></a>
+    <script src="src/js/javasript.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Formulário de Inscrição</h1>
+    </header>
+    <main>
+        <form id="form-inscricao">
+            <fieldset>
+                <legend>DADOS PESSOAIS</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <div class="field-group">
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado">
+                            <option value="sp">São Paulo</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pr">Paraná</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="pais">País:</label>
+                        <select id="pais" name="pais">
+                            <option value="brasil">Brasil</option>
+                            <option value="eua">EUA</option>
+                            <option value="canada">Canadá</option>
+                            <option value="japao">Japão</option>
+                            <option value="alemanha">Alemanha</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" maxlength="9" oninput="formatarCEP(this)" onblur="validarCEP(this)">
+
+                <label for="tel_res">Telefone Residencial:</label>
+                <input type="text" id="tel_res" name="tel_res" maxlength="15" oninput="formatarTelefone(this)" onblur="validarTelefone(this)">
+
+                <label for="tel_cel">Telefone Celular:</label>
+                <input type="text" id="tel_cel" name="tel_cel" maxlength="15" oninput="formatarTelefone(this)" onblur="validarTelefone(this)">
+    
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+            <button type="button" onclick="limparFormulario()">Limpar</button>
+        </form>
+    </main>
+</body>
+</html>
