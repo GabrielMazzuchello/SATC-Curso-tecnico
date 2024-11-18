@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição - Academia</title>
-    <a href="src/css/estilos.css"></a>
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="src/css/estilos.css">
     <script src="src/js/javasript.js"></script>
 </head>
-<body>
+<body id="corpo_formulario">
     <header>
-        <h1>Formulário de Inscrição</h1>
+        <a href="index.html"><h1>Formulário de Inscrição</h1></a>  
     </header>
     <main>
-        <form id="form-inscricao">
+        <form id="formInscricao">
             <fieldset>
                 <legend>DADOS PESSOAIS</legend>
                 <label for="nome">Nome:</label>
@@ -21,54 +21,106 @@
                 <label for="endereco">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" required>
 
-                <div class="field-group">
-                    <div>
-                        <label for="bairro">Bairro:</label>
-                        <input type="text" id="bairro" name="bairro" required>
-                    </div>
-                    <div>
-                        <label for="cidade">Cidade:</label>
-                        <input type="text" id="cidade" name="cidade" required>
-                    </div>
-                </div>
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro">
 
-                <div class="field-group">
-                    <div>
-                        <label for="estado">Estado:</label>
-                        <select id="estado" name="estado">
-                            <option value="sp">São Paulo</option>
-                            <option value="rj">Rio de Janeiro</option>
-                            <option value="mg">Minas Gerais</option>
-                            <option value="pr">Paraná</option>
-                            <option value="rs">Rio Grande do Sul</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="pais">País:</label>
-                        <select id="pais" name="pais">
-                            <option value="brasil">Brasil</option>
-                            <option value="eua">EUA</option>
-                            <option value="canada">Canadá</option>
-                            <option value="japao">Japão</option>
-                            <option value="alemanha">Alemanha</option>
-                        </select>
-                    </div>
-                </div>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="">Selecione</option>
+                    <option>SP</option>
+                    <option>RJ</option>
+                    <option>MG</option>
+                    <option>RS</option>
+                    <option>SC</option>
+                </select>
 
                 <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" maxlength="9" oninput="formatarCEP(this)" onblur="validarCEP(this)">
+                <input type="text" id="cep" name="cep" placeholder="xxxxx-xxx" required>
 
-                <label for="tel_res">Telefone Residencial:</label>
-                <input type="text" id="tel_res" name="tel_res" maxlength="15" oninput="formatarTelefone(this)" onblur="validarTelefone(this)">
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" required>
+                    <option value="">Selecione</option>
+                    <option>Brasil</option>
+                    <option>Argentina</option>
+                    <option>Chile</option>
+                    <option>Uruguai</option>
+                    <option>Paraguai</option>
+                </select>
 
-                <label for="tel_cel">Telefone Celular:</label>
-                <input type="text" id="tel_cel" name="tel_cel" maxlength="15" oninput="formatarTelefone(this)" onblur="validarTelefone(this)">
-    
+                <label for="telefoneResidencial">Telefone Residencial:</label>
+                <input type="text" id="telefoneResidencial" name="telefoneResidencial" placeholder="(xx) xxxx-xxxx">
+
+                <label for="telefoneCelular">Telefone Celular:</label>
+                <input type="text" id="telefoneCelular" name="telefoneCelular" placeholder="(xx) xxxxx-xxxx">
+
+                <label>Sexo:</label>
+                <div>
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="masculino" name="sexo" value="Masculino" required>
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" id="feminino" name="sexo" value="Feminino">
+                </div>
+
+                <label>Estado Civil:</label>
+                <div>
+                    <label for="solteiro">Solteiro</label>
+                    <input type="radio" id="solteiro" name="estadoCivil" value="Solteiro" required>
+                    <label for="casado">Casado</label>
+                    <input type="radio" id="casado" name="estadoCivil" value="Casado">
+                </div>
+
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
             </fieldset>
 
-            <button type="submit">Enviar</button>
-            <button type="button" onclick="limparFormulario()">Limpar</button>
+            <fieldset>
+                <legend>MODALIDADE</legend>
+                <label>Modalidade:</label>
+                <div>
+                    <label for="natacao">Natação</label>
+                    <input type="checkbox" id="natacao" name="modalidade" value="natacao">
+                    <label for="danca">Dança</label>
+                    <input type="checkbox" id="danca" name="modalidade" value="Dança">
+                </div>
+
+                <label>Dias da Semana:</label>
+                <div>
+                    <label for="segunda">Segunda</label>
+                    <input type="checkbox" id="segunda" name="diasSemana" value="Segunda">
+                    <label for="terca">Terça</label>
+                    <input type="checkbox" id="terca" name="diasSemana" value="Terça">
+                    <label for="quarta">Quarta</label>
+                    <input type="checkbox" id="quarta" name="diasSemana" value="Quarta">
+                    <label for="quarta">Quinta</label>
+                    <input type="checkbox" id="quinta" name="diasSemana" value="Quinta">
+                    <label for="quinta">Sexta</label>
+                    <input type="checkbox" id="sexta" name="diasSemana" value="Sexta">
+                    <label for="sexta">Sabado</label>
+                    <input type="checkbox" id="sabado" name="diasSemana" value="Sabado">
+
+                </div>
+
+                <label>Período:</label>
+                <div>
+                    <label for="matutino">Matutino</label>
+                    <input type="radio" id="matutino" name="periodo" value="Matutino" required>
+                    <label for="vespertino">Vespertino</label>
+                    <input type="radio" id="vespertino" name="periodo" value="Vespertino">
+                    <label for="noturno">Noturno</label>
+                    <input type="radio" id="noturno" name="periodo" value="Noturno">
+                </div>
+
+                <label for="horario">Horário:</label>
+                <input type="time" id="horario" name="horario" required>
+            </fieldset>
+
+            <button type="submit">ENVIAR</button>
+            <button type="reset">LIMPAR</button>
         </form>
     </main>
+    <script src="src/js/javasript.js"></script>
 </body>
 </html>

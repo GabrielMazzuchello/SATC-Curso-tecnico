@@ -1,13 +1,14 @@
-body {
+#corpo_home {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #b3adad;
 }
 
-header {
+#header_home {
     background-color: #333;
     color: white;
     width: 100%;
@@ -15,17 +16,17 @@ header {
     text-align: center;
 }
 
-header nav a {
+#header_home nav a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
 }
 
-header nav a:hover {
+#header_home nav a:hover {
     text-decoration: underline;
 }
 
-main {
+#main_home {
     margin-top: 20px;
     width: 100%;
     display: flex;
@@ -92,4 +93,73 @@ form button:hover {
     color: red;
     font-size: 12px;
     margin-top: -10px;
+}
+
+
+
+
+
+
+
+
+
+#corpo_formulario {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #0073e6;
+    color: white;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+form legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+form label {
+    display: block;
+    margin: 5px 0;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #0073e6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #005bb5;
 }

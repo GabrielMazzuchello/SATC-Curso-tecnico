@@ -1,3 +1,4 @@
+// Carrossel de Slides
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 
@@ -11,8 +12,7 @@ function showSlide() {
 setInterval(showSlide, 5000);
 showSlide();
 
-
-// Formatação dinâmica para CEP
+// Função para formatação dinâmica de CEP
 function formatarCEP(campo) {
     let cep = campo.value.replace(/\D/g, ""); // Remove caracteres não numéricos
     if (cep.length > 5) {
@@ -32,13 +32,13 @@ function validarCEP(campo) {
     }
 }
 
-// Formatação dinâmica para Telefones
+// Função para formatação dinâmica de telefones
 function formatarTelefone(campo) {
     let telefone = campo.value.replace(/\D/g, ""); // Remove caracteres não numéricos
     if (telefone.length > 10) {
         telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2, 7)}-${telefone.substring(7, 11)}`;
     } else if (telefone.length > 6) {
-        telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2, 6)}-${telefone.substring(6, 10)}`;
+        telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2, 6)}-${telefone.substring(6)}`;
     } else if (telefone.length > 2) {
         telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2)}`;
     }
@@ -71,10 +71,28 @@ function limparErro(campo) {
 
 // Função para limpar todo o formulário
 function limparFormulario() {
-    const form = document.getElementById("form-inscricao");
+    const form = document.getElementById("formInscricao");
     form.reset();
 
     // Remove erros visuais
     const campos = document.querySelectorAll(".erro");
     campos.forEach(campo => limparErro(campo));
 }
+
+// Configuração de eventos quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", () => {
+    const cep = document.getElementById("cep");
+    const telefoneResidencial = document.getElementById("telefoneResidencial");
+    const telefoneCelular = document.getElementById("telefoneCelular");
+
+    // Formatar CEP automaticamente
+    cep.addEventListener("input", () => formatarCEP(cep));
+    cep.addEventListener("blur", () => validarCEP(cep));
+
+    // Formatar telefones automaticamente
+    telefoneResidencial.addEventListener("input", () => formatarTelefone(telefoneResidencial));
+    telefoneResidencial.addEventListener("blur", () => validarTelefone(telefoneResidencial));
+
+    telefoneCelular.addEventListener("input", () => formatarTelefone(telefoneCelular));
+    telefoneCelular.addEventListener("blur", () => validarTelefone(telefoneCelular));
+});
