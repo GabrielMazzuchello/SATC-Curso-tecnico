@@ -11,13 +11,12 @@ if (isset($_POST["gravar"])) {
     $coordenador = $_POST["coordenador"];
 
     // comando sql para gravar no banco
-    $sql = "insert into cursos (codigo,nome,coordenador) values ('$codigo', '$nome', '$coordenador')";
+    $sql = "insert into curso (codigo,nome,coordenador) values ('$codigo', '$nome', '$coordenador')";
 
     // comando PHP pra executar SQL no banco
-
     $resultado = mysql_query($sql);
 
-    if ($resultado == true) {
+    if ($resultado == True) {
         echo "dados cadastrados com sucesso";
     } else {
         echo "erro ao cadastrar os dados";
