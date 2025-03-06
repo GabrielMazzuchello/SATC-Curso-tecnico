@@ -29,8 +29,22 @@
             programação desenvolvendo softwares e pretendo até o fim do ano
             começar a trabalhar em alguma empresa da área
           </p>
+          <div class="banner" id="banner">
+            <h2>O que você quer ser quando crescer?</h2>
+            <img class="banner_img" src="1.png" alt="Banner" id="banner-img">
+          </div>
         </div>
       </section>
     </div>
+    <script>
+      const imagens = ["1.png", "2.png", "3.png", "4.png", "5.png"];
+      let index = 0;
+      const bannerImg = document.getElementById("banner-img");
+      
+      document.getElementById("banner").addEventListener("click", () => {
+          index = (index + 1) % imagens.length;
+          bannerImg.src = imagens[index];
+      });
+  </script>
   </body>
 </html>
