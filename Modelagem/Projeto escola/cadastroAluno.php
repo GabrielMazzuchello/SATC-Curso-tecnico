@@ -8,10 +8,11 @@ if (isset($_POST['gravar'])) {
     // Capturar as variáveis HTML
     $codigo = $_POST['codigo'];
     $nome = $_POST['nome'];
-    $coordenador = $_POST['coordenador'];
+    $fone = $_POST['fone'];
+    $codcurso = $_POST['codcurso'];
 
     // Comando SQL para gravar no banco
-    $sql = "INSERT INTO curso (codigo, nome, coordenador) VALUES ('$codigo', '$nome', '$coordenador')";
+    $sql = "INSERT INTO aluno (codigo, nome, fone, codcurso) VALUES ('$codigo', '$nome', '$fone', '$codcurso')";
 
     // Executar a consulta
     $resultado = mysql_query($sql);
@@ -29,10 +30,11 @@ if (isset($_POST['alterar'])) {
     //capturar as variaveis HTML
     $codigo      = $_POST['codigo'];
     $nome        = $_POST['nome'];
-    $coordenador = $_POST['coordenador'];
+    $fone = $_POST['fone'];
+    $codcurso = $_POST['codcurso'];
 
     //comando SQL para gravar banco
-    $sql = "update curso set nome='$nome',coordenador='$coordenador'
+    $sql = "update aluno set nome='$nome', codcurso='$codcurso', fone='$fone'
           where codigo = '$codigo'";
 
     //comando PHP pra executar SQl no banco (boolean)
@@ -49,10 +51,11 @@ if (isset($_POST["excluir"])) {
     // capturar variaveis do HTML
     $codigo = $_POST["codigo"];
     $nome = $_POST["nome"];
-    $coordenador = $_POST["coordenador"];
+    $fone = $_POST['fone'];
+    $codcurso = $_POST["codcurso"];
 
     // comando sql para gravar no banco
-    $sql = "delete from curso where codigo = '$codigo'";
+    $sql = "delete from aluno where codigo = '$codigo'";
 
     // comando PHP pra executar SQL no banco
     $resultado = mysql_query($sql);
@@ -66,19 +69,20 @@ if (isset($_POST["excluir"])) {
 
 if (isset($_POST["pesquisar"])) {
 
-    $sql = "SELECT * FRom curso";
+    $sql = "SELECT * FRom aluno";
     $resultado = mysql_query($sql);
 
-    echo "<h3>curso cadastrados: </h3>";
+    echo "<h3>aluno cadastrados: </h3>";
     echo "<table border=1>
-    <tr><td>codigo</td><td>curso</td><td>coordenador</td></tr>";
+    <tr><td>codigo</td><td>nome</td><td>fone</td><td>codcurso</td></tr>";
 
     while ($dados = mysql_fetch_array($resultado)) {
         echo "
             <tr>
                 <td>" . $dados['codigo'] . "</td>
                 <td>" . $dados['nome'] . "</td>
-                <td>" . $dados['coordenador'] . "</td>
+                <td>" . $dados['fone'] . "</td>
+                <td>" . $dados['codcurso'] . "</td>
             </tr>";
     }
     echo "</table>";
