@@ -18,7 +18,7 @@ if (isset($_POST['conectar'])) {
         </script>";
     } else {
         setcookie('login', $login);
-        header('Location:menu.htm');
+        header('Location:nav.html');
     }
 }
 ?>
