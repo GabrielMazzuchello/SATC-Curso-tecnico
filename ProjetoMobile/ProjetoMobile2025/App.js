@@ -1,4 +1,6 @@
 import { View } from "react-native";
+// Only import react-native-gesture-handler on native platforms
+import 'react-native-gesture-handler';
 import Gallery, { Profile, Favorites } from "./src/components/Profile";
 import { StyleSheet } from "react-native";
 import { Teste } from "./src/components/teste";
