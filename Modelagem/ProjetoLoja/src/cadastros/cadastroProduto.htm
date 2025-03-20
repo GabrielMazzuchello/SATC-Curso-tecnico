@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cadastro Produto</title>
+    <link rel="stylesheet" type="text/css" href="../styles/estilos.css" />
+  </head>
+  <body>
+    <div id="formulario">
+      <h1>Cadastro Produto</h1>
+      <form
+        name="formulario"
+        method="POST"
+        action="../BackEnd/cadastroProduto.php"
+        enctype="multipart/form-data"
+      >
+        <div>
+          <label>Codigo:</label>
+          <input type="text" name="codigo" id="codigo" size="10" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Descricao:</label>
+          <input type="text" name="descricao" id="descricao" size="30" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Cor:</label>
+          <input type="text" name="cor" id="cor" size="30" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Tamanho:</label>
+          <input type="text" name="tamanho" id="tamanho" size="30" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Preco:</label>
+          <input type="text" name="preco" id="preco" size="30" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Cod Marca:</label>
+          <input type="text" name="codmarca" id="codmarca" size="5" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Cod Categoria:</label>
+          <input type="text" name="codcategoria" id="codcategoria" size="5" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Cod Tipo:</label>
+          <input type="text" name="codtipo" id="codtipo" size="5" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Foto 1</label>
+          <input class="file-button" type="file" name="foto1" id="foto1" />
+          <br /><br />
+        </div>
+        <div>
+          <label>Foto 2</label>
+          <input class="file-button" type="file" nam    e="foto2" id="foto2" />
+          <br /><br />
+        </div>
+
+        <div class="products_buttons-container">
+          <input class="button" type="submit" name="gravar" value="Gravar" />
+          <input class="button" type="submit" name="excluir" value="Excluir" />
+          <input class="button" type="submit" name="alterar" value="Alterar" />
+          <input
+            class="button"
+            type="submit"
+            name="pesquisar"
+            value="Pesquisar"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

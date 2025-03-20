@@ -1,0 +1,55 @@
+body {
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  justify-content: center;
+	color: white;
+}
+
+#formulario {
+  padding: 25px;
+  border-radius: 15px;
+  width: 425px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(59, 59, 59);
+}
+
+.products_buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button {
+  border-radius: 25px;
+  border: 15px;
+  background-color: antiquewhite;
+}
+
+form label {
+  font-size: 16px;
+  display: inline-block;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.file-button {
+	border-radius: 25px;
+	padding-right: 10px;
+}
+
+form input[type="text"] {
+  width: 275px;
+	border-radius: 25px;
+  height: 17px;
+  margin-bottom: 10px;
+	background-color: #aaa0a4;
+}
+
+form input[type="file"] {
+  width: auto;
+  margin-bottom: 10px;
+	background-color: #aaa0a4;
+}
