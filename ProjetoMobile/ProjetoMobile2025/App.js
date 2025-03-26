@@ -24,10 +24,10 @@ export default function App() {
           tabBarBadge: 6,
           tabBarStyle: {
             backgroundColor: "red", // Cor de fundo da barra de abas
-            // borderTopWidth: 0, // Remove a borda superior
-            // borderBottomWidth: 0, // Remove a borda inferior
-            // elevation: 0, // Remove qualquer sombra (Android)
-            // shadowOpacity: 0, // Remove sombra (iOS)
+            borderTopWidth: 0, // Remove a borda superior
+            borderBottomWidth: 0, // Remove a borda inferior
+            elevation: 0, // Remove qualquer sombra (Android)
+            shadowOpacity: 0, // Remove sombra (iOS)
           },
           // tabBarLabelPosition: "below-icon", coloca o texto abaixo do icone
         }}
