@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import imagemFundo from "../../assets/elite-wallpaper.jpg";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-export function Login() {
+export function Login({ navigation }) {
   return (
     <View style={styles.login}>
       <ImageBackground style={styles.backgroundImage} source={imagemFundo}>
@@ -25,7 +26,10 @@ export function Login() {
             />
 
             {/* Botão de Login */}
-            <TouchableOpacity onp style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("Home")}
+            >
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 

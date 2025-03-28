@@ -1,176 +1,98 @@
 <?php
-// Configurações do banco de dados
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'loja');
 
-// Conectar ao banco de dados
-$conectar = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-if ($conectar->connect_error) {
-   die("Falha na conexão: " . $conectar->connect_error);
+// Conexão com o banco de dados
+$conectar = mysqli_connect('localhost', 'root', '', 'loja');
+if (!$conectar) {
+   die('Conexão falhou: ' . mysqli_connect_error());
 }
 // 
 
-// Função para sanitizar entradas
-function sanitizeInput($data)
-{
-   return htmlspecialchars(strip_tags(trim($data)));
-}
+if (isset($_POST['gravar'])) {
+   $codigo = mysqli_real_escape_string($conectar, $_POST['codigo']);
+   $descricao = mysqli_real_escape_string($conectar, $_POST['descricao']);
+   $cor = mysqli_real_escape_string($conectar, $_POST['cor']);
+   $tamanho = mysqli_real_escape_string($conectar, $_POST['tamanho']);
+   $preco = mysqli_real_escape_string($conectar, $_POST['preco']);
+   $codmarca = mysqli_real_escape_string($conectar, $_POST['codmarca']);
+   $codcategoria = mysqli_real_escape_string($conectar, $_POST['codcategoria']);
+   $codtipo = mysqli_real_escape_string($conectar, $_POST['codtipo']);
 
-// Função para manipulação de arquivos
-function handleFileUpload($file, $diretorio)
-{
-   if ($file['error'] !== UPLOAD_ERR_OK) return null;
+   // Diretório para salvar as imagens
+   $diretorio = "../imgs/imagensProdutos/";
 
-   $extensao = pathinfo($file['name'], PATHINFO_EXTENSION);
-   $extensoesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+   // Verificar a extensão dos arquivos de imagem
+   $extensao1 = strtolower(pathinfo($_FILES['foto1']['name'], PATHINFO_EXTENSION));
+   $extensao2 = strtolower(pathinfo($_FILES['foto2']['name'], PATHINFO_EXTENSION));
 
-   if (!in_array(strtolower($extensao), $extensoesPermitidas)) return null;
+   $tipos_permitidos = array('jpg', 'jpeg', 'png', 'gif');
+   
+   if (in_array($extensao1, $tipos_permitidos) && in_array($extensao2, $tipos_permitidos)) {
+      // Gerar nome único para as imagens
+      $novo_nome1 = md5(time() . $_FILES['foto1']['name']) . '.' . $extensao1;
+      $novo_nome2 = md5(time() . $_FILES['foto2']['name']) . '.' . $extensao2;
 
-   $novoNome = uniqid() . '.' . $extensao;
-   $caminhoCompleto = $diretorio . $novoNome;
+      // Movendo as imagens para o diretório
+      move_uploaded_file($_FILES['foto1']['tmp_name'], $diretorio . $novo_nome1);
+      move_uploaded_file($_FILES['foto2']['tmp_name'], $diretorio . $novo_nome2);
 
-   if (move_uploaded_file($file['tmp_name'], $caminhoCompleto)) {
-      return $novoNome;
-   }
-   return null;
-}
+      // Inserir no banco de dados
+      $sql = "INSERT INTO produto (codigo, descricao, cor, tamanho, preco, codmarca, codcategoria, codtipo, foto1, foto2)
+                VALUES ('$codigo', '$descricao', '$cor', '$tamanho', '$preco', '$codmarca', '$codcategoria', '$codtipo', '$novo_nome1', '$novo_nome2')";
 
-// Processar operações
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   $diretorioFotos = 'fotos/';
-
-   // Operação de Cadastro
-   if (isset($_POST['gravar'])) {
-      $foto1 = handleFileUpload($_FILES['foto1'], $diretorioFotos);
-      $foto2 = handleFileUpload($_FILES['foto2'], $diretorioFotos);
-
-      $stmt = $conectar->prepare("INSERT INTO produto (
-            codigo, descricao, cor, tamanho, preco, 
-            codmarca, codcategoria, codtipo, foto1, foto2
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-      $stmt->bind_param(
-         "ssssdsiiss",
-         sanitizeInput($_POST['codigo']),
-         sanitizeInput($_POST['descricao']),
-         sanitizeInput($_POST['cor']),
-         sanitizeInput($_POST['tamanho']),
-         sanitizeInput($_POST['preco']),
-         sanitizeInput($_POST['codmarca']),
-         sanitizeInput($_POST['codcategoria']),
-         sanitizeInput($_POST['codtipo']),
-         $foto1,
-         $foto2
-      );
-
-      if ($stmt->execute()) {
-         echo "Produto cadastrado com sucesso!";
+      if (mysqli_query($conectar, $sql)) {
+         echo "Dados informados cadastrados com sucesso";
       } else {
-         echo "Erro ao cadastrar: " . $stmt->error;
+         echo "Erro: " . mysqli_error($conectar);
       }
-   }
-
-   // Operação de Exclusão
-   if (isset($_POST['excluir'])) {
-      $stmt = $conectar->prepare("DELETE FROM produto WHERE codigo = ?");
-      $stmt->bind_param("s", sanitizeInput($_POST['codigo']));
-
-      if ($stmt->execute()) {
-         echo "Produto excluído com sucesso!";
-      } else {
-         echo "Erro ao excluir: " . $stmt->error;
-      }
-   }
-
-   // Operação de Alteração
-   if (isset($_POST['alterar'])) {
-      $stmt = $conectar->prepare("UPDATE produto SET 
-            descricao = ?,
-            cor = ?,
-            tamanho = ?,
-            preco = ?,
-            codmarca = ?,
-            codcategoria = ?,
-            codtipo = ?
-            WHERE codigo = ?
-        ");
-
-      $stmt->bind_param(
-         "ssssiiis",
-         sanitizeInput($_POST['descricao']),
-         sanitizeInput($_POST['cor']),
-         sanitizeInput($_POST['tamanho']),
-         sanitizeInput($_POST['preco']),
-         sanitizeInput($_POST['codmarca']),
-         sanitizeInput($_POST['codcategoria']),
-         sanitizeInput($_POST['codtipo']),
-         sanitizeInput($_POST['codigo'])
-      );
-
-      if ($stmt->execute()) {
-         echo "Produto atualizado com sucesso!";
-      } else {
-         echo "Erro ao atualizar: " . $stmt->error;
-      }
+   } else {
+      echo "Por favor, envie imagens com extensões válidas (JPG, JPEG, PNG, GIF).";
    }
 }
 
-// Consulta para exibir produtos
-$sql = "SELECT * FROM produto";
-$result = $conectar->query($sql);
-?>
+if (isset($_POST['excluir'])) {
+   $codigo = mysqli_real_escape_string($conectar, $_POST['codigo']);
 
-<!DOCTYPE html>
-<html>
+   $sql = "DELETE FROM produto WHERE codigo = '$codigo'";
 
-<body>
+   if (mysqli_query($conectar, $sql)) {
+      echo 'Exclusão realizada com sucesso';
+   } else {
+      echo 'Erro ao excluir dados: ' . mysqli_error($conectar);
+   }
+}
 
-   <!-- Formulário único para todas operações -->
-   <form method="post" enctype="multipart/form-data">
-      <!-- Campos comuns -->
-      <input type="text" name="codigo" placeholder="Código" required>
-      <input type="text" name="descricao" placeholder="Descrição">
-      <input type="text" name="cor" placeholder="Cor">
-      <input type="text" name="tamanho" placeholder="Tamanho">
-      <input type="number" name="preco" placeholder="Preço" step="0.01">
-      <input type="number" name="codmarca" placeholder="Código Marca">
-      <input type="number" name="codcategoria" placeholder="Código Categoria">
-      <input type="number" name="codtipo" placeholder="Código Tipo">
+if (isset($_POST['alterar'])) {
+   $codigo = mysqli_real_escape_string($conectar, $_POST['codigo']);
+   $descricao = mysqli_real_escape_string($conectar, $_POST['descricao']);
+   $preco = mysqli_real_escape_string($conectar, $_POST['preco']);
 
-      <!-- Upload de fotos -->
-      <input type="file" name="foto1">
-      <input type="file" name="foto2">
+   $sql = "UPDATE produto SET descricao='$descricao', preco='$preco' WHERE codigo = '$codigo'";
 
-      <!-- Botões de ação -->
-      <button type="submit" name="gravar">Cadastrar</button>
-      <button type="submit" name="alterar">Atualizar</button>
-      <button type="submit" name="excluir">Excluir</button>
-   </form>
+   if (mysqli_query($conectar, $sql)) {
+      echo 'Dados alterados com sucesso';
+   } else {
+      echo 'Erro ao alterar dados: ' . mysqli_error($conectar);
+   }
+}
 
-   <!-- Exibição dos produtos -->
-   <?php if ($result->num_rows > 0): ?>
-      <h2>Produtos Cadastrados</h2>
-      <?php while ($produto = $result->fetch_assoc()): ?>
-         <div>
-            <p>Código: <?= $produto['codigo'] ?></p>
-            <p>Descrição: <?= $produto['descricao'] ?></p>
-            <p>Preço: R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
-            <?php if ($produto['foto1']): ?>
-               <img src="fotos/<?= $produto['foto1'] ?>" width="200">
-            <?php endif; ?>
-            <?php if ($produto['foto2']): ?>
-               <img src="fotos/<?= $produto['foto2'] ?>" width="200">
-            <?php endif; ?>
-            <hr>
-         </div>
-      <?php endwhile; ?>
-   <?php else: ?>
-      <p>Nenhum produto encontrado.</p>
-   <?php endif; ?>
+if (isset($_POST['pesquisar'])) {
+   $sql = mysqli_query($conectar, "SELECT codigo, descricao, cor, tamanho, preco, codmarca, codcategoria, codtipo, foto1, foto2 FROM produto");
 
-   <?php $conectar->close(); ?>
-</body>
-
-</html>
+   if (mysqli_num_rows($sql) == 0) {
+      echo "Desculpe, mas sua pesquisa não retornou resultados.";
+   } else {
+      echo "<b>Produtos Cadastrados:</b><br><br>";
+      while ($dados = mysqli_fetch_object($sql)) {
+         echo "Codigo    : " . $dados->codigo . "  ";
+         echo "Descricao : " . $dados->descricao . " ";
+         echo "Cor       : " . $dados->cor . " ";
+         echo "Tamanho   : " . $dados->tamanho . " ";
+         echo "Preco     : " . $dados->preco . "<br>";
+         echo "Marca     : " . $dados->codmarca . "";
+         echo "Categoria : " . $dados->codcategoria . " ";
+         echo "Tipo      : " . $dados->codtipo . "<br>";
+         echo '<img src="../imgs/imagensProdutos/' . $dados->foto1 . '" height="200" width="200" />' . "  ";
+         echo '<img src="../imgs/imagensProdutos/' . $dados->foto2 . '" height="200" width="200" />' . "<br><br>  ";
+      }
+   }
+}

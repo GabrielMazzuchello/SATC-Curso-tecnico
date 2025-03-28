@@ -43,6 +43,7 @@ public class ex08 {
                 System.out.println("Essa formação não existe, tente novamente!");
             }
         }
+        
         System.out.println("Lista dos alunos e suas formações:");
         System.out.println("INF: " + fun);
         System.out.println("MED: " + med);
