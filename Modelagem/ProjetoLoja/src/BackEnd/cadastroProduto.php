@@ -10,6 +10,7 @@ $conectar = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 if ($conectar->connect_error) {
    die("Falha na conexão: " . $conectar->connect_error);
 }
+// 
 
 // Função para sanitizar entradas
 function sanitizeInput($data)
