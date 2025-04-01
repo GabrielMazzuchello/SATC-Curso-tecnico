@@ -4,18 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto loja</title>
+    <link rel="stylesheet" href="../styles/estilos.css" />
   </head>
   <body>
     <form name="formulario" method="post" action="../BackEnd/cadastroCategoria.php">
-      Codigo: <input type="text" name="codigo" id="codigo" size="5" />
-      <br /><br />
+      <h2>Cadastro de Categoria</h2>
+      <label for="codigo">Código:</label>
+      <input type="text" name="codigo" id="codigo" size="5" />
       
-      Nome: <input type="text" name="nome" id="nome" size="30" /> <br /><br />
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" id="nome" size="30" />
 
-      <input type="submit" name="gravar" value="gravar" />
-      <input type="submit" name="alterar" value="alterar" />
-      <input type="submit" name="excluir" value="excluir" />
-      <input type="submit" name="pesquisar" value="pesquisar" />
+      <div class="form-buttons">
+        <input type="submit" name="gravar" value="Gravar" />
+        <input type="submit" name="alterar" value="Alterar" />
+      </div>
+      
+      <div class="form-buttons">
+        <input type="submit" name="excluir" value="Excluir" />
+        <input type="submit" name="pesquisar" value="Pesquisar" />
+      </div>
     </form>
   </body>
 </html>

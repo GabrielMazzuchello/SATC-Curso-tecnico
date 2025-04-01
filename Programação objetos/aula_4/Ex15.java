@@ -1,7 +1,7 @@
 package aula06;
 import javax.swing.JOptionPane;
 
-public class Ex15 {
+public class ex15 {
     
     public static void main(String[] args){
         funcionarios();

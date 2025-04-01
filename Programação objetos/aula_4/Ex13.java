@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class Ex13 {
+public class ex13 {
     
         public void main(String[] args) {
         cursos();
