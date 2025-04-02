@@ -9,7 +9,7 @@ import {
 import imagemFundo from "../../assets/elite-wallpaper.jpg";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-export function Login({ navigation }) {
+export default function Login({ navigation }) {
   return (
     <View style={styles.login}>
       <ImageBackground style={styles.backgroundImage} source={imagemFundo}>
@@ -28,8 +28,7 @@ export function Login({ navigation }) {
             {/* Botão de Login */}
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate("Home")}
-            >
+              onPress={() => navigation.navigate("HomeTabs")}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 

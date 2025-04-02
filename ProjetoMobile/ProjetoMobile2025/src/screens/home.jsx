@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, ImageBackground } from "react-native";
 import imagemFundo from "../../assets/elite-wallpaper.jpg";
 
-export function Home() {
+export default function Home() {
   return (
     <ImageBackground style={styles.backgroundImage} source={imagemFundo}>
       <View style={styles.home}>

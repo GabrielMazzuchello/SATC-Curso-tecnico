@@ -1,0 +1,48 @@
+Isso ocorre porque o React+Vite precisa que os arquivos sejam compilados antes de serem enviados para produção. O diretório dist contém os arquivos já prontos para produção, enquanto o código-fonte no repositório ainda precisa ser processado.
+
+Aqui está como você pode resolver isso:
+
+Certifique-se de que o build está sendo gerado corretamente:
+- No terminal, execute o comando:
+npm run build
+- Isso criará a pasta dist com os arquivos prontos para produção.
+
+Configure o Square Cloud para usar os arquivos da pasta dist:
+- Certifique-se de que o script de inicialização no arquivo de configuração (squarecloud.config) aponte para os arquivos da pasta dist.
+- Por exemplo:
+{
+       "start": "serve -s dist",
+       "dependencies": {
+         "serve": "^14.0.1"
+       }
+     }
+
+
+Garanta que o dist seja enviado ao Square Cloud:
+- Antes de fazer o push, rode npm run build para gerar a pasta dist.
+- Certifique-se de que o conteúdo do dist está incluído no upload para o Square Cloud.
+
+Verifique a porta correta:
+- Certifique-se de que a aplicação está configurada para usar a porta 80, como mencionado na documentação do Square Cloud.
+
+Se o problema persistir, recomendo entrar em contato com o suporte da Square Cloud através do painel de suporte.
+
+
+
+
+
+
+
+
+Olá, Det0napollar ! 😊 Sou Jhonatan Jeferson e estou aqui para te ajudar.
+
+Estamos entrando em contato para lhe conceder informações adicionais sobre métodos para atingir o seu objetivo.
+Método 1:
+Reenvie a aplicação de modo que ela mesma faça o build, utilizando da opção de comando de início personalizado;
+Método 2:
+Se você utiliza o build do vite, você pode realizar o build, renomear o html para vite.html e realizar o envio;
+Método 3:
+Você pode criar um workflow no github que, utiliza de nosso CLI onde ele realizaria todo o procedimento e enviaria somente o necessário.(Este método pode ser usado em conjunto com qualquer um dos métodos informados anteriormente). Há um exemplo de workflow em: https://github.com/squarecloudofc/github-action.
+
+Atenciosamente,
+Jhonatan Jeferson
