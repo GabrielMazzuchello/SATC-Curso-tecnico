@@ -32,6 +32,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 /* Estilo do título */
@@ -153,7 +154,6 @@ a {
 .home_container {
   display: flex;
   flex-direction: column;
-
 }
 .home_navbar {
   display: flex;
@@ -162,4 +162,41 @@ a {
   padding: 10px;
   background-color: var(--surface-color);
   border-radius: 0px 0px 15px 15px;
+}
+
+/* Css da home */
+
+.home_login-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  align-items: right;
+}
+
+.home_logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  align-items: left;
+}
+
+.home_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--surface-color);
+  border-radius: 0px 0px 15px 15px;
+}
+
+.home_container {
+  display: flex;
+  align-items: center;
+}
+
+.imagem-produto {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
