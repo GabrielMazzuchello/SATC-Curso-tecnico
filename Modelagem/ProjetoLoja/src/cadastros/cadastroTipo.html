@@ -6,21 +6,21 @@
     <title>Cadastro Tipo</title>
     <link rel="stylesheet" type="text/css" href="../styles/estilos.css" />
   </head>
-  <body>
+  <body class="body-cadastros">
     <form name="formulario" method="post" action="../BackEnd/cadastroTipo.php" id="formulario">
-      <div>
+
         <label for="codigo">Codigo:</label>
         <input type="text" name="codigo" id="codigo" size="5" />
-      </div>
-      <br />
-      <div>
+
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" size="30" />
-      </div>
-      <br />
+
       <div class="form-buttons">
         <input type="submit" name="gravar" value="Gravar" class="button" />
         <input type="submit" name="alterar" value="Alterar" class="button" />
+      </div>
+
+      <div class="form-buttons">
         <input type="submit" name="excluir" value="Excluir" class="button" />
         <input type="submit" name="pesquisar" value="Pesquisar" class="button" />
       </div>

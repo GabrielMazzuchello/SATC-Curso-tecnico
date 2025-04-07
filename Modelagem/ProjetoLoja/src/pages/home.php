@@ -14,9 +14,15 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
 
 <body>
     <div class="home_header">
-        <img src="../imgs/logo.png" class="home_logo">
-        <h1 class="title">Arena Esportiva</h1><br>
-        <a href="../BackEnd/loginUsuario.php"><img src="../imgs/enter.png" class="home_login-img"></a>
+        <div>
+            <img src="../imgs/logo.png" class="home_logo">
+        </div>
+        <div>
+            <h1 class="title">Arena Esportiva</h1><br>
+        </div>
+        <div>
+            <a href="../BackEnd/loginUsuario.php"><img src="../imgs/enter.png" class="home_login-img"></a>
+        </div>
     </div>
     <div class="home_container">
         <form name="formulario" method="post" action="home.php">

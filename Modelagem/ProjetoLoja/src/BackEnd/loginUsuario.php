@@ -23,20 +23,38 @@ if (isset($_POST['conectar'])) {
 }
 ?>
 
-<HTML>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<HEAD>
-    <TITLE>login usuario</TITLE>
-</HEAD>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/estilos.css"> <!-- Link para o arquivo CSS -->
+    <title>Login - Usuário</title>
+</head>
 
-<BODY>
-    <form name="formulario" method="post" action="loginusuario.php">
-        Login: <input type="text" name="login" id="login" size=10>
-        <br><br>
-        Senha: <input type="password" name="senha" id="senha" size=10>
-        <br><br>
-        <input type="submit" name="conectar" value="conectar">
-    </form>
-</BODY>
+<body>
 
-</HTML>
+    <div class="container">
+        <form name="formulario" method="post" action="loginusuario.php">
+            <h2>Login de Usuário</h2>
+
+            <!-- Campo para login -->
+            <label for="login">Login:</label>
+            <input type="text" name="login" id="login" size="10" required>
+
+            <!-- Campo para senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" size="10" required>
+
+            <!-- Botão de envio -->
+            <input type="submit" name="conectar" value="Conectar">
+
+            <!-- Caso queira adicionar um link para recuperação de senha -->
+            <!-- <a href="recuperar-senha.php">Esqueci minha senha</a> -->
+        </form>
+    </div>
+
+</body>
+
+</html>

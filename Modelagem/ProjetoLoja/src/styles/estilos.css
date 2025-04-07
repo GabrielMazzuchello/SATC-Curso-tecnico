@@ -12,6 +12,11 @@
   --hover-bg: #2d2d2d;
 }
 
+.body-cadastros {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
@@ -164,8 +169,6 @@ a {
   border-radius: 0px 0px 15px 15px;
 }
 
-/* Css da home */
-
 .home_login-img {
   width: 50px;
   height: 50px;
@@ -241,4 +244,125 @@ a {
 .produto-info .preco {
   font-weight: bold;
   color: var(--text-primary);
+}
+
+/* CSS da login */
+/* Variáveis do Tema */
+:root {
+  --bg-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --primary-color: #1976d2;
+  --secondary-color: #2d9cdb;
+  --error-color: #cf6679;
+  --border-color: #333333;
+  --border-color-secondary: #186600;
+  --hover-bg: #2d2d2d;
+}
+
+/* Reset e Layout Base */
+
+/* Estilo do Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Formulário de Login */
+form {
+  background-color: var(--surface-color);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 425px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+/* Estilização dos Campos de Entrada */
+label {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  max-width: 275px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #444;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Botão de Envio */
+input[type="submit"] {
+  width: 100%;
+  max-width: 48%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+input[type="submit"]:active {
+  background-color: #3e8e41;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+  margin-top: 10px;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    max-width: 100%;
+  }
+
+  input[type="submit"] {
+    max-width: 100%;
+  }
 }
