@@ -112,14 +112,14 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
             echo "<div class='produtos-container'>";
             while ($dados = mysql_fetch_object($seleciona_produtos)) {
                 echo "<div class='produto-item'>";
-                echo "<div class='imagens'>";
+                echo "<div>";
                 echo "<img src='../imgs/imagensProdutos/" . htmlspecialchars($dados->foto1) . "' alt='Imagem 1' class='imagem-produto' />";
                 echo "</div>"; // .imagens
                 echo "<div class='produto-info'>";
-                echo "<p class='descricao'>Descrição: " . htmlspecialchars($dados->descricao) . "</p>";
-                echo "<p class='cor'>Cor: " . htmlspecialchars($dados->cor) . "</p>";
-                echo "<p class='tamanho'>Tamanho: " . htmlspecialchars($dados->tamanho) . "</p>";
-                echo "<p class='preco'>Preço R$: " . number_format($dados->preco, 2, ',', '.') . "</p>";
+                echo "<p>Descrição: " . htmlspecialchars($dados->descricao) . "</p>";
+                echo "<p>Cor: " . htmlspecialchars($dados->cor) . "</p>";
+                echo "<p>Tamanho: " . htmlspecialchars($dados->tamanho) . "</p>";
+                echo "<p> Preço R$: " . number_format($dados->preco, 2, ',', '.') . "</p>";
                 echo "</div>"; // .produto-info
                 echo "</div>"; // .produto-item
             }
