@@ -76,6 +76,34 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
     </div>
 
     <?php
+    if (!isset($_POST['pesquisar'])) {
+        $sql_produtos = "SELECT descricao, cor, tamanho, preco, foto1 FROM produto ORDER BY codigo DESC LIMIT 8";
+        $resultado = mysql_query($sql_produtos);
+
+        if (mysql_num_rows($resultado) > 0) {
+            echo "<div class='produtos-container'>";
+            while ($dados = mysql_fetch_array($resultado)) {
+                echo "<div class='produto-item'>";
+                echo "<div>";
+                echo "<img src='../imgs/imagensProdutos/" . htmlspecialchars($dados['foto1']) . "' alt='Imagem 1' class='imagem-produto' />";
+                echo "</div>";
+                echo "<div class='produto-info'>";
+                echo "<p>Descrição: " . htmlspecialchars($dados['descricao']) . "</p>";
+                echo "<p>Cor: " . htmlspecialchars($dados['cor']) . "</p>";
+                echo "<p>Tamanho: " . htmlspecialchars($dados['tamanho']) . "</p>";
+                echo "<p>Preço R$: " . number_format($dados['preco'], 2, ',', '.') . "</p>";
+                echo "</div>";
+                echo "</div>";
+            }
+            echo "</div>";
+        } else {
+            echo "<h1>Nenhum produto disponível.</h1>";
+        }
+    }
+    ?>
+
+
+    <?php
     if (isset($_POST['pesquisar'])) {
         // Pegando os filtros
         $marca         = (empty($_POST['marca'])) ? 'null' : $_POST['marca'];

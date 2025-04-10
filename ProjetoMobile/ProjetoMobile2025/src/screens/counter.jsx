@@ -9,6 +9,8 @@ import {
 
 export default function Counter() {
   const [count, setCount] = useState(0);
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
 
   const Aumentar = () => {
     setCount(count + 1);
@@ -36,13 +38,18 @@ export default function Counter() {
       <View style={styles.inputs}>
         <TextInput
           style={styles.input}
-          placeholder="Digite um valor: "
+          value={nome}
+          onChangeText={setNome}
+          placeholder="Nome: "
         />
         <TextInput
           style={styles.input}
-          placeholder="Digite outro valor: "
+          value={email}
+          onChangeText={setEmail}
+          placeholder="Email: "
         />
       </View>
+      <Text>Oi, {nome}, seu email é {email}</Text>
     </View>
   );
 }
