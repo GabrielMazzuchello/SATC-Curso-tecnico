@@ -8,6 +8,7 @@ import Feed from "./src/screens/feed";
 import Counter from "./src/screens/counter";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Product from "./src/screens/Product";
 
 function HomeTabs() {
   const Tabs = createBottomTabNavigator();
@@ -54,6 +55,16 @@ function HomeTabs() {
         options={{
           tabBarIcon: () => (
             <MaterialCommunityIcons name="counter" size={24} color="white" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="Products"
+        component={Product}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="shopping-search" size={24} color="white" />
           ),
         }}
       />
