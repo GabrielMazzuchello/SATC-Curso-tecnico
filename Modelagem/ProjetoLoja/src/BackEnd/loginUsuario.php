@@ -36,7 +36,7 @@ if (isset($_POST['conectar'])) {
 <body>
 
     <div class="container">
-        <form name="formulario" method="post" action="loginusuario.php">
+        <form class="form_Login" name="formulario" method="post" action="loginusuario.php">
             <h2>Login de Usuário</h2>
 
             <!-- Campo para login -->

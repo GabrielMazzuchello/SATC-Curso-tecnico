@@ -22,53 +22,60 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
         </div>
         <div>
             <a href="../BackEnd/loginUsuario.php"><img src="../imgs/enter.png" class="home_login-img"></a>
+            <a href="cart.php" ><img src="../imgs/cart.png" class="home_cart-img" alt=""></a>
         </div>
     </div>
     <div class="home_container">
-        <form name="formulario" method="post" action="home.php">
+        <form class="forms_Cadastros" name="formulario" method="post" action="home.php">
             <h1>Pesquisas</h1>
 
             <!------ pesquisar Categorias -------------->
-            <label for="">Categorias: </label>
-            <select name="categoria">
-                <option value="" selected="selected">Selecione...</option>
-                <?php
-                $query = mysql_query("SELECT codigo, nome FROM categoria");
-                while ($categorias = mysql_fetch_array($query)) { ?>
-                    <option value="<?php echo $categorias['codigo']; ?>">
-                        <?php echo $categorias['nome']; ?>
-                    </option>
-                <?php }
-                ?>
-            </select>
+            <div class="home_pesquisar-campos">
+                <label for="">Categorias: </label>
+                <select name="categoria">
+                    <option value="" selected="selected">Selecione...</option>
+                    <?php
+                    $query = mysql_query("SELECT codigo, nome FROM categoria");
+                    while ($categorias = mysql_fetch_array($query)) { ?>
+                        <option value="<?php echo $categorias['codigo']; ?>">
+                            <?php echo $categorias['nome']; ?>
+                        </option>
+                    <?php }
+                    ?>
+                </select>
+            </div>
 
             <!------ pesquisar tipo -------------->
-            <label for="">Tipo: </label>
-            <select name="classificacao">
-                <option value="" selected="selected">Selecione...</option>
-                <?php
-                $query = mysql_query("SELECT codigo, nome FROM tipo");
-                while ($classificacao = mysql_fetch_array($query)) { ?>
-                    <option value="<?php echo $classificacao['codigo']; ?>">
-                        <?php echo $classificacao['nome']; ?>
-                    </option>
-                <?php }
-                ?>
-            </select>
+            <div class="home_pesquisar-campos">
+                <label for="">Tipo: </label>
+                <select name="classificacao">
+                    <option value="" selected="selected">Selecione...</option>
+                    <?php
+                    $query = mysql_query("SELECT codigo, nome FROM tipo");
+                    while ($classificacao = mysql_fetch_array($query)) { ?>
+                        <option value="<?php echo $classificacao['codigo']; ?>">
+                            <?php echo $classificacao['nome']; ?>
+                        </option>
+                    <?php }
+                    ?>
+                </select>
+            </div>
 
             <!------ pesquisar marcas -------------->
-            <label for="">Marcas: </label>
-            <select name="marca">
-                <option value="" selected="selected">Selecione...</option>
-                <?php
-                $query = mysql_query("SELECT codigo, nome FROM marca");
-                while ($marcas = mysql_fetch_array($query)) { ?>
-                    <option value="<?php echo $marcas['codigo']; ?>">
-                        <?php echo $marcas['nome']; ?>
-                    </option>
-                <?php }
-                ?>
-            </select>
+            <div class="home_pesquisar-campos">
+                <label for="">Marcas: </label>
+                <select name="marca">
+                    <option value="" selected="selected">Selecione...</option>
+                    <?php
+                    $query = mysql_query("SELECT codigo, nome FROM marca");
+                    while ($marcas = mysql_fetch_array($query)) { ?>
+                        <option value="<?php echo $marcas['codigo']; ?>">
+                            <?php echo $marcas['nome']; ?>
+                        </option>
+                    <?php }
+                    ?>
+                </select>
+            </div>
 
             <input type="submit" name="pesquisar" value="Pesquisar">
         </form>
@@ -84,6 +91,7 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
             echo "<div class='produtos-container'>";
             while ($dados = mysql_fetch_array($resultado)) {
                 echo "<div class='produto-item'>";
+                echo "<form action='index.php' method='post'>";
                 echo "<div>";
                 echo "<img src='../imgs/imagensProdutos/" . htmlspecialchars($dados['foto1']) . "' alt='Imagem 1' class='imagem-produto' />";
                 echo "</div>";
@@ -93,7 +101,9 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
                 echo "<p>Tamanho: " . htmlspecialchars($dados['tamanho']) . "</p>";
                 echo "<p>Preço R$: " . number_format($dados['preco'], 2, ',', '.') . "</p>";
                 echo "</div>";
+                echo "<button type='submit'>Enviar</button>";
                 echo "</div>";
+                echo "</form>";
             }
             echo "</div>";
         } else {
@@ -140,6 +150,7 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
             echo "<div class='produtos-container'>";
             while ($dados = mysql_fetch_object($seleciona_produtos)) {
                 echo "<div class='produto-item'>";
+                echo "<form action='index.php' method='post'>";
                 echo "<div>";
                 echo "<img src='../imgs/imagensProdutos/" . htmlspecialchars($dados->foto1) . "' alt='Imagem 1' class='imagem-produto' />";
                 echo "</div>"; // .imagens
@@ -149,6 +160,8 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
                 echo "<p>Tamanho: " . htmlspecialchars($dados->tamanho) . "</p>";
                 echo "<p> Preço R$: " . number_format($dados->preco, 2, ',', '.') . "</p>";
                 echo "</div>"; // .produto-info
+                echo "<button type='submit'>Comprar</button>";
+                echo "</form>";
                 echo "</div>"; // .produto-item
             }
             echo "</div>"; // .produtos-container
