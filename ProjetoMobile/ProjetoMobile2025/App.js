@@ -2,13 +2,14 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home  from "./src/screens/home";
-import Login  from "./src/screens/login";
+import Home from "./src/screens/home";
+import Login from "./src/screens/login";
 import Feed from "./src/screens/feed";
 import Counter from "./src/screens/counter";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Product from "./src/screens/Product";
+import register from "./src/screens/register";
 
 function HomeTabs() {
   const Tabs = createBottomTabNavigator();
@@ -64,7 +65,11 @@ function HomeTabs() {
         component={Product}
         options={{
           tabBarIcon: () => (
-            <MaterialCommunityIcons name="shopping-search" size={24} color="white" />
+            <MaterialCommunityIcons
+              name="shopping-search"
+              size={24}
+              color="white"
+            />
           ),
         }}
       />
@@ -84,6 +89,7 @@ export default function App() {
           name="HomeTabs"
           component={HomeTabs}
         />
+        <Stack.Screen name ="Cadastro" component={register} />
       </Stack.Navigator>
     </NavigationContainer>
   );

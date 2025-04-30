@@ -7,9 +7,29 @@ import {
   TouchableOpacity,
 } from "react-native";
 import imagemFundo from "../../assets/elite-wallpaper.jpg";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../services/firebase";
+import React, { useState } from "react";
 
 export default function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      window.alert("Erro: Preencha todos os campos!"); // Usando window.alert() para exibir alerta no navegador
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      window.alert("Login feito com sucesso!"); // Usando window.alert() no sucesso
+      navigation.navigate("HomeTabs");
+    } catch (error) {
+      window.alert("Erro no login: " + error.message); // Exibe o erro no alert
+    }
+  };
+
   return (
     <View style={styles.login}>
       <ImageBackground style={styles.backgroundImage} source={imagemFundo}>
@@ -18,22 +38,27 @@ export default function Login({ navigation }) {
             <TextInput
               style={styles.input}
               placeholder="Digite seu e-mail aqui: "
+              value={email}
+              onChangeText={setEmail}
             />
             <TextInput
               style={styles.input}
               placeholder="Digite sua senha aqui: "
               secureTextEntry
+              value={password}
+              onChangeText={setPassword}
             />
 
             {/* Botão de Login */}
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => navigation.navigate("HomeTabs")}>
+            <TouchableOpacity style={styles.button} onPress={handleLogin}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
             {/* Botão de Criar Conta */}
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => navigation.navigate("Cadastro")}
+            >
               <Text style={styles.buttonText}>Criar uma conta</Text>
             </TouchableOpacity>
           </View>
