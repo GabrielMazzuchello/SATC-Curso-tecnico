@@ -1,4 +1,5 @@
 <?php
+session_start();
 $connect = mysql_connect('localhost', 'root', ''); // Conectar ao banco de dados
 $db      = mysql_select_db('loja'); // Selecionar o banco de dados
 ?>
@@ -22,7 +23,35 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
         </div>
         <div>
             <a href="../BackEnd/loginUsuario.php"><img src="../imgs/enter.png" class="home_login-img"></a>
-            <a href="../BackEnd/cart.php"><img src="../imgs/cart.png" class="home_cart-img" alt=""></a>
+            <?php
+            // Conta os itens no carrinho
+            $itensCarrinho = 0;
+            if (isset($_SESSION['carrinho'])) {
+                foreach ($_SESSION['carrinho'] as $item) {
+                    $itensCarrinho += $item['quantidade']; // Soma as quantidades dos itens
+                }
+            }
+            ?>
+
+            <!-- Ícone do Carrinho com Notificação -->
+            <a href="../BackEnd/cart.php" style="position: relative;">
+                <img src="../imgs/cart.png" class="home_cart-img" alt="Carrinho de Compras">
+                <?php if ($itensCarrinho > 0): ?>
+                    <span style="
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 3px 7px;
+            font-size: 12px;
+        ">
+                        <?php echo $itensCarrinho; ?>
+                    </span>
+                <?php endif; ?>
+            </a>
+
         </div>
     </div>
     <div class="home_container">
@@ -179,38 +208,36 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
     if (isset($_POST['comprar'])) {
         $codigo = $_POST['codigo'];
 
-        // Corrigida a consulta (sem aspas em nomes de campos/tabelas)
+        // Garante que o carrinho exista
+        if (!isset($_SESSION['carrinho'])) {
+            $_SESSION['carrinho'] = array();
+        }
+
+        // Busca o produto no banco
         $carrinho_sql = "SELECT * FROM produto WHERE codigo = '$codigo'";
         $resultado = mysql_query($carrinho_sql);
 
         if ($resultado && mysql_num_rows($resultado) > 0) {
             $produto = mysql_fetch_array($resultado);
 
-            $nome = $produto['descricao'];
-            $codigo = $produto['codigo'];
-            $preco_carrinho = $produto['preco'];
-            $imagem_carrinho = $produto['foto1'];
-
-            $vetor_carrinho = array(
-                $codigo => array(
-                    'nome' => $nome,
-                    'codigo' => $codigo,
-                    'preco' => $preco_carrinho,
+            // Se já existe no carrinho, só aumenta a quantidade
+            if (isset($_SESSION['carrinho'][$codigo])) {
+                $_SESSION['carrinho'][$codigo]['quantidade'] += 1;
+            } else {
+                // Adiciona novo item
+                $_SESSION['carrinho'][$codigo] = array(
+                    'nome' => $produto['descricao'],
+                    'codigo' => $produto['codigo'],
+                    'preco' => $produto['preco'],
                     'quantidade' => 1,
-                    'imagem' => $imagem_carrinho
-                )
-            );
-
-            echo '<pre>';
-            print_r($vetor_carrinho);
-            echo '</pre>';
+                    'imagem' => $produto['foto1']
+                );
+            }
         } else {
             echo "<p style='color:red;'>Produto não encontrado ou erro na consulta: " . mysql_error() . "</p>";
         }
     }
     ?>
-
-
 </body>
 
 </HTML>
