@@ -119,21 +119,21 @@ public class ex03 {
         scanner.nextLine();
 
         System.out.print("Nome: ");
-            String nome = scanner.nextLine();
+        String nome = scanner.nextLine();
 
-            System.out.print("Comprimento (cm): ");
-            float comprimento = scanner.nextFloat();
-            scanner.nextLine();
+        System.out.print("Comprimento (cm): ");
+        float comprimento = scanner.nextFloat();
+        scanner.nextLine();
 
-            System.out.print("Cor: ");
-            String cor = scanner.nextLine();
+        System.out.print("Cor: ");
+        String cor = scanner.nextLine();
 
-            System.out.print("Ambiente: ");
-            String ambiente = scanner.nextLine();
+        System.out.print("Ambiente: ");
+        String ambiente = scanner.nextLine();
 
-            System.out.print("Velocidade média (m/s): ");
-            float velocidade = scanner.nextFloat();
-            scanner.nextLine();
+        System.out.print("Velocidade média (m/s): ");
+        float velocidade = scanner.nextFloat();
+        scanner.nextLine();
 
         if (escolha == 1) {
             System.out.print("Característica: ");
