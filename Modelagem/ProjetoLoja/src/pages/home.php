@@ -4,6 +4,45 @@ $connect = mysql_connect('localhost', 'root', ''); // Conectar ao banco de dados
 $db      = mysql_select_db('loja'); // Selecionar o banco de dados
 ?>
 
+<?php
+if (isset($_POST['comprar'])) {
+    $codigo = $_POST['codigo'];
+
+    // Garante que o carrinho exista
+    if (!isset($_SESSION['carrinho'])) {
+        $_SESSION['carrinho'] = array();
+    }
+
+    // Busca o produto no banco
+    $carrinho_sql = "SELECT * FROM produto WHERE codigo = '$codigo'";
+    $resultado = mysql_query($carrinho_sql);
+
+    if ($resultado && mysql_num_rows($resultado) > 0) {
+        $produto = mysql_fetch_array($resultado);
+
+        // Se já existe no carrinho, só aumenta a quantidade
+        if (isset($_SESSION['carrinho'][$codigo])) {
+            $_SESSION['carrinho'][$codigo]['quantidade'] += 1;
+        } else {
+            // Adiciona novo item
+            $_SESSION['carrinho'][$codigo] = array(
+                'nome' => $produto['descricao'],
+                'codigo' => $produto['codigo'],
+                'preco' => $produto['preco'],
+                'quantidade' => 1,
+                'imagem' => $produto['foto1']
+            );
+        }
+    } else {
+        echo "<p style='color:red;'>Produto não encontrado ou erro na consulta: " . mysql_error() . "</p>";
+    }
+
+    // Redireciona para evitar reenvio e atualizar o contador
+    header("Location: home.php");
+    exit();
+}
+?>
+
 <HTML>
 
 <HEAD>
@@ -135,7 +174,9 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
                 echo "<p>Tamanho: " . htmlspecialchars($dados['tamanho']) . "</p>";
                 echo "<p>Preço R$: " . number_format($dados['preco'], 2, ',', '.') . "</p>";
                 echo "</div>";
+                echo "<div class='button_buy' >";
                 echo "<button type='submit' name='comprar'>Comprar</button>";
+                echo "</div>";
                 echo "</form>";
                 echo "</div>"; // .produto-item
             }
@@ -195,46 +236,13 @@ $db      = mysql_select_db('loja'); // Selecionar o banco de dados
                 echo "<p>Tamanho: " . htmlspecialchars($dados->tamanho) . "</p>";
                 echo "<p> Preço R$: " . number_format($dados->preco, 2, ',', '.') . "</p>";
                 echo "</div>"; // .produto-info
-                echo "<button name='comprar' type='submit'>Comprar</button>";
+                echo "<div class='button_buy' >";
+                echo "<button type='submit' name='comprar'>Comprar</button>";
+                echo "</div>";
                 echo "</form>";
                 echo "</div>"; // .produto-item
             }
             echo "</div>"; // .produtos-container
-        }
-    }
-    ?>
-
-    <?php
-    if (isset($_POST['comprar'])) {
-        $codigo = $_POST['codigo'];
-
-        // Garante que o carrinho exista
-        if (!isset($_SESSION['carrinho'])) {
-            $_SESSION['carrinho'] = array();
-        }
-
-        // Busca o produto no banco
-        $carrinho_sql = "SELECT * FROM produto WHERE codigo = '$codigo'";
-        $resultado = mysql_query($carrinho_sql);
-
-        if ($resultado && mysql_num_rows($resultado) > 0) {
-            $produto = mysql_fetch_array($resultado);
-
-            // Se já existe no carrinho, só aumenta a quantidade
-            if (isset($_SESSION['carrinho'][$codigo])) {
-                $_SESSION['carrinho'][$codigo]['quantidade'] += 1;
-            } else {
-                // Adiciona novo item
-                $_SESSION['carrinho'][$codigo] = array(
-                    'nome' => $produto['descricao'],
-                    'codigo' => $produto['codigo'],
-                    'preco' => $produto['preco'],
-                    'quantidade' => 1,
-                    'imagem' => $produto['foto1']
-                );
-            }
-        } else {
-            echo "<p style='color:red;'>Produto não encontrado ou erro na consulta: " . mysql_error() . "</p>";
         }
     }
     ?>

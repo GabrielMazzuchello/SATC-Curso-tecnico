@@ -1,4 +1,7 @@
-/* Reseta e define variáveis para o tema escuro */
+/* ========================== */
+/* VARIÁVEIS E RESET GERAL   */
+/* ========================== */
+
 :root {
   --bg-color: #121212;
   --surface-color: #1e1e1e;
@@ -12,11 +15,6 @@
   --hover-bg: #2d2d2d;
 }
 
-.body-cadastros {
-  display: flex;
-  justify-content: center;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
@@ -27,37 +25,40 @@ body {
   width: 100%;
 }
 
-/* Estiliza o formulário */
-.forms_Cadastros {
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* ========================== */
+/* FORMULÁRIOS - GERAL       */
+/* ========================== */
+
+.forms_Cadastros,
+.form_Login {
   background-color: var(--surface-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  width: 425px;
-  margin-top: 20px;
   padding: 25px;
   border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 425px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Estilo do título */
-h2 {
-  text-align: center;
-  color: var(--text-primary);
-}
-
-/* Estiliza os labels */
 label {
   font-size: 16px;
   color: var(--text-primary);
-  display: inline-block;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
-/* Estilo para os campos de input de texto */
 input[type="text"],
-input[type="file"] {
-  width: 275px;
+input[type="file"],
+input[type="password"] {
+  width: 100%;
+  max-width: 275px;
   padding: 10px;
   margin-bottom: 15px;
   background-color: #444;
@@ -68,14 +69,15 @@ input[type="file"] {
 }
 
 input[type="text"]:focus,
-input[type="file"]:focus {
+input[type="file"]:focus,
+input[type="password"]:focus {
   outline: none;
   border-color: var(--primary-color);
 }
 
-/* Estilo para os botões de submit */
 input[type="submit"] {
-  width: 48%;
+  width: 100%;
+  max-width: 48%;
   padding: 12px;
   margin: 5px 1%;
   border: none;
@@ -84,6 +86,7 @@ input[type="submit"] {
   color: var(--text-primary);
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
@@ -94,41 +97,67 @@ input[type="submit"]:active {
   background-color: #3e8e41;
 }
 
-/* Estilo para os botões dentro de uma linha */
-.form-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
+/* ========================== */
+/* BOTÕES E COMPONENTES BASE */
+/* ========================== */
 
-/* Estilos do container de botões */
-.products_buttons-container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-/* Estilo geral de botões */
-.button {
+.button,
+button[type="submit"],
+button[name="comprar"] {
   border-radius: 25px;
-  background-color: antiquewhite;
   padding: 12px 20px;
   font-size: 14px;
   border: none;
   cursor: pointer;
+  background-color: antiquewhite;
 }
 
 .button:hover {
   background-color: #f5f5f5;
 }
 
-/* Estilo para links */
-a {
-  text-decoration: none;
-  color: var(--text-primary);
+button[name="comprar"] {
+  margin-top: auto;
+  align-self: center;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Menu (nav) */
+/* ========================== */
+/* CONTAINERS E LAYOUTS      */
+/* ========================== */
+
+.body-cadastros {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-buttons,
+.products_buttons-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.products_buttons-container {
+  justify-content: space-evenly;
+}
+
+/* ========================== */
+/* NAVEGAÇÃO E HEADER        */
+/* ========================== */
+
 .nav_bar {
   width: 100%;
   display: flex;
@@ -140,41 +169,40 @@ a {
 }
 
 .nav_links {
-  width: 100%;
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 
-.nav_title {
+.nav_title,
+.title {
   display: flex;
   justify-content: center;
-}
-
-.title {
   color: var(--text-primary);
 }
 
-/* CSS da pagina home */
+/* ========================== */
+/* HOME PAGE                 */
+/* ========================== */
 
 .home_container {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.home_navbar {
+
+.home_navbar,
+.home_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   background-color: var(--surface-color);
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0 0 15px 15px;
 }
 
-.home_login-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-}
-
+.home_login-img,
 .home_cart-img {
   width: 50px;
   height: 50px;
@@ -188,26 +216,18 @@ a {
   align-items: left;
 }
 
-.home_header {
+.home_pesquisar-campos {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 185px;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: var(--surface-color);
-  border-radius: 0px 0px 15px 15px;
 }
 
-.home_container {
-  display: flex;
-  align-items: center;
-}
-
-.imagem-produto {
-  width: 250px;
-  height: 250px;
-  border-radius: 5px;
-  margin-right: 10px;
-}
+/* ========================== */
+/* PRODUTOS                  */
+/* ========================== */
 
 .produtos-container {
   display: flex;
@@ -226,7 +246,8 @@ a {
   width: 275px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
@@ -251,141 +272,59 @@ a {
   color: var(--text-primary);
 }
 
-/* CSS da login */
-/* Variáveis do Tema */
-:root {
-  --bg-color: #121212;
-  --surface-color: #1e1e1e;
-  --text-primary: #e0e0e0;
-  --text-secondary: #9e9e9e;
-  --primary-color: #1976d2;
-  --secondary-color: #2d9cdb;
-  --error-color: #cf6679;
-  --border-color: #333333;
-  --border-color-secondary: #186600;
-  --hover-bg: #2d2d2d;
-}
-
-/* Reset e Layout Base */
-
-/* Estilo do Container */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Formulário de Login */
-.form_Login {
-  background-color: var(--surface-color);
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 425px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h2 {
-  text-align: center;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-}
-
-/* Estilização dos Campos de Entrada */
-label {
-  font-size: 16px;
-  color: var(--text-primary);
-  margin-bottom: 5px;
-  display: inline-block;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  max-width: 275px;
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #444;
-  border: 1px solid var(--border-color);
-  border-radius: 25px;
-  color: var(--text-primary);
-  font-size: 14px;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
-/* Botão de Envio */
-input[type="submit"] {
-  width: 100%;
-  max-width: 28%;
-  padding: 12px;
-  margin-top: 15px;
-  border: none;
-  border-radius: 25px;
-  background-color: var(--primary-color);
-  color: var(--text-primary);
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-  background-color: var(--secondary-color);
-}
-
-input[type="submit"]:active {
-  background-color: #3e8e41;
-}
-
-/* Links */
-a {
-  text-decoration: none;
-  color: var(--text-primary);
-  margin-top: 10px;
-  font-size: 14px;
+.imagem-produto {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 0 auto;
   display: block;
+}
+
+.produto-info p {
+  margin: 5px 0;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limita o texto a uma linha */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /* Oculta o texto que excede a área */
+  text-overflow: ellipsis; /* Exibe "..." no final quando o texto é truncado */
+}
+
+/* ========================== */
+/* CARRINHO DE COMPRAS       */
+/* ========================== */
+
+.cart__header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--border-color);
+  border-radius: 0 0 10px 10px;
+}
+
+.cart__home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart__home-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
   text-align: center;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-  form {
-    width: 90%;
-  }
-
-  input[type="text"],
-  input[type="password"] {
-    max-width: 100%;
-  }
-
-  input[type="submit"] {
-    max-width: 100%;
-  }
+.cart__home-items th,
+.cart__home-items td {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
-.home_pesquisar-campos {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 185px;
-  justify-content: space-between;
-}
-
-/* CSS do carrinho */
-
-.cart {
-  padding: 20px;
-  background-color: #f5f5f5;
+.cart__home-items th {
+  background-color: #4e4e4e;
+  font-weight: bold;
 }
 
 .cart__item {
@@ -400,15 +339,146 @@ a {
   margin-right: 15px;
 }
 
-.cart__item-info {
-  flex: 1;
+.button_buy {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
 }
 
-.cart__item-name {
+/* ========================== */
+/* CARRINHO DE COMPRAS VAZIO      */
+/* ========================== */
+
+/* Estilo para a mensagem de carrinho vazio */
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 40px 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart-container .message {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.empty-cart-container .button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.empty-cart-container .button:hover {
+  background-color: #0056b3;
+}
+
+/* Cor de fundo para páginas de cadastro */
+.body-cadastros {
+  background-color: #f0f2f5;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================== */
+/* FORMULÁRIO                 */
+/* ========================== */
+
+/* Estilo do formulário como card */
+/* Fundo cinza claro para a página */
+.body-cadastros {
+  background-color: var(--bg-color); /* Escuro */
+  color: var(--text-primary);
+}
+
+/* Card centralizado */
+form[name="formulario"] {
+  max-width: 500px;
+  margin: auto;
+  background-color: var(--border-color); /* Escuro */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+form[name="formulario"] h2 {
+  text-align: center;
+  color: #fdfdfd;
+  margin-bottom: 20px;
+}
+
+form[name="formulario"] label {
+  display: block;
+  margin-top: 10px;
+  color: #ffffff;
   font-weight: bold;
 }
 
-.cart__item-price,
-.cart__item-quantity {
-  color: #666;
+form[name="formulario"] input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #f7f6f6;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Botões organizados em linha */
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-buttons input[type="submit"] {
+  flex: 1;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ========================== */
+/* RESPONSIVIDADE            */
+/* ========================== */
+
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    max-width: 100%;
+  }
+
+  input[type="submit"] {
+    max-width: 100%;
+  }
 }
