@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#808080",
     borderRadius: 8,
     alignItems: "center",
-    justifyContent: "space-around",
+    // justifyContent: "space-around",
     display: "Flex",
     flexDirection: "row",
   },

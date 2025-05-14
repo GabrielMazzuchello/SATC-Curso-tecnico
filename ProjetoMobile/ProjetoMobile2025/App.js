@@ -10,6 +10,7 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Product from "./src/screens/Product";
 import register from "./src/screens/register";
+import productRegistration from "./src/screens/productRegistration";
 
 function HomeTabs() {
   const Tabs = createBottomTabNavigator();
@@ -61,6 +62,16 @@ function HomeTabs() {
       />
 
       <Tabs.Screen
+        name="Cadastro Produtos"
+        component={productRegistration}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="counter" size={24} color="white" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
         name="Products"
         component={Product}
         options={{
@@ -89,7 +100,7 @@ export default function App() {
           name="HomeTabs"
           component={HomeTabs}
         />
-        <Stack.Screen name ="Cadastro" component={register} />
+        <Stack.Screen name="Cadastro" component={register} />
       </Stack.Navigator>
     </NavigationContainer>
   );
