@@ -20,7 +20,7 @@ const ProductRegistration = () => {
       Alert.alert("Erro", "Preencha todos os campos");
       return;
     }
-
+    
     try {
       await addDoc(collection(db, "produtos"), {
         imagem,
