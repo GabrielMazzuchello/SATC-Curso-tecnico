@@ -6,11 +6,13 @@ import Home from "./src/screens/home";
 import Login from "./src/screens/login";
 import Feed from "./src/screens/feed";
 import Counter from "./src/screens/counter";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Product from "./src/screens/Product";
 import register from "./src/screens/register";
 import productRegistration from "./src/screens/productRegistration";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { ProviderCart } from "./src/components/ProviderCart";
+import cart from "./src/screens/cart";
 
 function HomeTabs() {
   const Tabs = createBottomTabNavigator();
@@ -84,6 +86,16 @@ function HomeTabs() {
           ),
         }}
       />
+
+      <Tabs.Screen
+        name="Carrinho"
+        component={cart}
+        options={{
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="counter" size={24} color="white" />
+          ),
+        }}
+      />
     </Tabs.Navigator>
   );
 }
@@ -92,16 +104,18 @@ export default function App() {
   const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen
-          options={{ headerShown: false }}
-          name="HomeTabs"
-          component={HomeTabs}
-        />
-        <Stack.Screen name="Cadastro" component={register} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ProviderCart>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            options={{ headerShown: false }}
+            name="HomeTabs"
+            component={HomeTabs}
+          />
+          <Stack.Screen name="Cadastro" component={register} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ProviderCart>
   );
 }
