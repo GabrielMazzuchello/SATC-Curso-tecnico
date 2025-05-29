@@ -1,3 +1,2 @@
 <?php
-include('pages/cadastroEditora.php');
-?>
+include('pages/cadastroLivro.php');

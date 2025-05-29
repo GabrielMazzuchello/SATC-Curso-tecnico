@@ -3,14 +3,16 @@ require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $pais = isset($_POST['pais']) ? $_POST['pais'] : '';
 
-    if ($nome) {
-        $stmt = mysqli_prepare($conectar, "INSERT INTO editora (nome) VALUES (?)");
-        mysqli_stmt_bind_param($stmt, "s", $nome);
+    if ($nome && $pais) {
+        $stmt = mysqli_prepare($conectar, 'INSERT INTO autor (nome, pais) VALUES (?, ?)');
+        mysqli_stmt_bind_param($stmt, 'ss', $nome, $pais);
+
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        echo "Editora cadastrada.";
+        echo "Autor cadastrado.";
 
         exit;
     } else {
