@@ -1,2 +1,2 @@
 <?php
-include('pages/cadastroLivro.php');
+include('pages/home.php');

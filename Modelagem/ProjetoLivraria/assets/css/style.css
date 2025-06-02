@@ -1,0 +1,145 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #2b2b2b;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  font-weight: bold;
+  color: #ccc;
+}
+
+button {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357ab8;
+}
+
+/* Home cadastros CSS */
+
+.homeCadastros__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #2b2b2b;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.homeCadastros__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.homeCadastros__list li {
+  margin-bottom: 10px;
+}
+
+.homeCadastros__list a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.homeCadastros__list a:hover {
+  color: #82b1ff;
+  text-decoration: underline;
+}
+
+/* Cartão de livro */
+.livroCard {
+  background-color: #3a3a3a;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.livroCard:hover {
+  transform: scale(1.05);
+}
+
+.livroCard img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.livroCard h4 {
+  margin: 10px 0 5px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.livroCard p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.livroGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
