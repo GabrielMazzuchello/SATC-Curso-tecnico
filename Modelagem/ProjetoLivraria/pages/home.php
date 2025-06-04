@@ -9,6 +9,17 @@
 </head>
 
 <body>
+    <div class="home__nav">
+        <div>
+            <img class="home__nav-img" src="/assets/img/versoEprosa.png" alt="Imagem do login">
+        </div>
+        <div>
+            <h1>Verso & Prosa</h1>
+        </div>
+        <div class="home__login-container">
+            <a href="/pages/login.php" class="btn btn-white btn-animate">Login</a>
+        </div>
+    </div>
     <div class="home__pesquisas">
         <form class="home__pesquisas-form" action="" method="GET">
             <h1>Filtros</h1>
