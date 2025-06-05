@@ -9,7 +9,7 @@
 
 <body>
     <h2>Cadastro de Livro</h2>
-    <form action="/includes/processaLivro.php" method="post" enctype="multipart/form-data">
+    <form class="form-padrao" action="/includes/processaLivro.php" method="post" enctype="multipart/form-data">
         <input type="text" name="titulo" placeholder="Título" required><br><br>
 
         <input type="number" name="nrpaginas" placeholder="Número de páginas" required><br><br>

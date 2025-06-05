@@ -15,7 +15,7 @@ h4 {
   color: #ffffff;
 }
 
-form {
+.form-padrao {
   max-width: 500px;
   margin: 40px auto;
   background-color: #2b2b2b;
@@ -24,10 +24,10 @@ form {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-input[type="text"],
-input[type="number"],
-input[type="file"],
-textarea {
+.form-padrao input[type="text"],
+.form-padrao input[type="number"],
+.form-padrao input[type="file"],
+.form-padrao textarea {
   width: 100%;
   padding: 10px;
   margin-top: 6px;
@@ -40,21 +40,21 @@ textarea {
   box-sizing: border-box;
 }
 
-input::placeholder,
-textarea::placeholder {
+.form-padrao input::placeholder,
+.form-padrao textarea::placeholder {
   color: #aaa;
 }
 
-textarea {
+.form-padrao textarea {
   resize: vertical;
 }
 
-label {
+.form-padrao label {
   font-weight: bold;
   color: #ccc;
 }
 
-button {
+.form-padrao button {
   background-color: #4a90e2;
   color: #fff;
   padding: 12px;
@@ -66,7 +66,7 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.form-padrao button:hover {
   background-color: #357ab8;
 }
 
@@ -130,8 +130,15 @@ button:hover {
   border-radius: 10px;
 }
 
+/* Continuar */
+
+.home__pesquisas {
+  display: flex;
+}
+
 .btn:link,
 .btn:visited {
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   padding: 15px 40px;

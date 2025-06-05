@@ -10,8 +10,8 @@
 
 <body>
     <h2>Cadastro de Categorias</h2>
-    <form action="/includes/processaCategoria" method="post">
-        <input type="text" name="nome" placeholder="Nome da categoria">
+    <form class="form-padrao" action="/includes/processaCategoria" method="post">
+        <input type="text" name="nome" placeholder="Nome da categoria" required>
         <button type="submit">Cadastrar</button>
     </form>
 </body>

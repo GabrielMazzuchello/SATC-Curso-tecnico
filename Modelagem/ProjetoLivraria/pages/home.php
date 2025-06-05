@@ -24,34 +24,34 @@
         <form class="home__pesquisas-form" action="" method="GET">
             <h1>Filtros</h1>
 
+            <?php include 'includes/listaOpcoes.php'; ?>
+
+            <!-- Autor -->
             <div>
                 <label for="autor">Autor</label>
                 <select name="autor" id="autor">
                     <option value="">Selecione...</option>
-                    <?php $tipo = 'autor';
-                    include 'includes/listaOpcoes.php'; ?>
+                    <?php listarOpcoes('autor'); ?>
                 </select>
-
             </div>
 
+            <!-- Categoria -->
             <div>
                 <label for="categoria">Categoria</label>
                 <select name="categoria" id="categoria">
                     <option value="">Selecione...</option>
-                    <?php $tipo = 'categoria';
-                    include 'includes/listaOpcoes.php'; ?>
+                    <?php listarOpcoes('categoria'); ?>
                 </select>
             </div>
 
+            <!-- Editora -->
             <div>
                 <label for="editora">Editora</label>
                 <select name="editora" id="editora">
                     <option value="">Selecione...</option>
-                    <?php $tipo = 'editora';
-                    include 'includes/listaOpcoes.php'; ?>
+                    <?php listarOpcoes('editora'); ?>
                 </select>
             </div>
-
             <button type="submit">Buscar</button>
         </form>
     </div>

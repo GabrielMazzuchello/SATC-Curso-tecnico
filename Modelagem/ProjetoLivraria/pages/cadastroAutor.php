@@ -10,9 +10,9 @@
 
 <body>
     <h2>Cadastro de Autores</h2>
-    <form action="/includes/processaAutor.php" method="post">
-        <input type="text" name="nome" placeholder="Nome do autor">
-        <input type="text" name="pais" placeholder="Pais do autor">
+    <form class="form-padrao" action="/includes/processaAutor.php" method="post">
+        <input type="text" name="nome" placeholder="Nome do autor" required>
+        <input type="text" name="pais" placeholder="Pais do autor" required>
         <button type="submit">Cadastrar</button>
     </form>
 

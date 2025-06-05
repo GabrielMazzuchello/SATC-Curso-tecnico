@@ -10,7 +10,7 @@
 
 <body>
     <h2>Cadastro de Editora</h2>
-    <form action="/includes/processaEditora.php" method="post">
+    <form class="form-padrao" action="/includes/processaEditora.php" method="post">
         <input type="text" name="nome" placeholder="Nome da editora">
         <button type="submit">Cadastrar</button>
     </form>
