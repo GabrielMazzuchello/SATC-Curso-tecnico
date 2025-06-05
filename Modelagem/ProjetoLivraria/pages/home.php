@@ -11,48 +11,47 @@
 <body>
     <div class="home__nav">
         <div>
-            <img class="home__nav-img" src="/assets/img/versoEprosa.png" alt="Imagem do login">
+            <img class="home__nav-img btn-brilho" src="/assets/img/versoEprosa.png" alt="Imagem do login">
         </div>
         <div>
             <h1>Verso & Prosa</h1>
         </div>
         <div class="home__login-container">
-            <a href="/pages/login.php" class="btn btn-white btn-animate">Login</a>
+            <a href="/pages/login.php" class="btn btn-white btn-animate btn-brilho">Login</a>
         </div>
     </div>
     <div class="home__pesquisas">
-        <form class="home__pesquisas-form" action="" method="GET">
-            <h1>Filtros</h1>
+        <form class="home__pesquisas-form custom-select" action="" method="GET">
 
             <?php include 'includes/listaOpcoes.php'; ?>
 
             <!-- Autor -->
-            <div>
-                <label for="autor">Autor</label>
-                <select name="autor" id="autor">
-                    <option value="">Selecione...</option>
-                    <?php listarOpcoes('autor'); ?>
-                </select>
-            </div>
+
+            <label for="autor">Autor:</label>
+            <select name="autor" id="autor">
+                <option value="">Selecione...</option>
+                <?php listarOpcoes('autor'); ?>
+            </select>
+
 
             <!-- Categoria -->
-            <div>
-                <label for="categoria">Categoria</label>
-                <select name="categoria" id="categoria">
-                    <option value="">Selecione...</option>
-                    <?php listarOpcoes('categoria'); ?>
-                </select>
-            </div>
+
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="">Selecione...</option>
+                <?php listarOpcoes('categoria'); ?>
+            </select>
+
 
             <!-- Editora -->
-            <div>
-                <label for="editora">Editora</label>
-                <select name="editora" id="editora">
-                    <option value="">Selecione...</option>
-                    <?php listarOpcoes('editora'); ?>
-                </select>
-            </div>
-            <button type="submit">Buscar</button>
+
+            <label for="editora">Editora:</label>
+            <select name="editora" id="editora">
+                <option value="">Selecione...</option>
+                <?php listarOpcoes('editora'); ?>
+            </select>
+
+            <button class="btn" type="submit">Buscar</button>
         </form>
     </div>
 </body>
