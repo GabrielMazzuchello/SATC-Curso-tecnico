@@ -6,18 +6,23 @@ function salvarImagem($campo)
     if (isset($_FILES[$campo]) && $_FILES[$campo]['error'] === UPLOAD_ERR_OK) {
         $ext = pathinfo($_FILES[$campo]['name'], PATHINFO_EXTENSION);
         $nomeCriptografado = uniqid('', true) . '.' . strtolower($ext);
+
+        // Caminho absoluto a partir da raiz do projeto
+        $pastaDestino = __DIR__ . '/../assets/img/';
+        $caminhoAbsoluto = $pastaDestino . $nomeCriptografado;
         $caminhoRelativo = 'assets/img/' . $nomeCriptografado;
 
-        if (!is_dir('assets/img')) {
-            mkdir('assets/img', 0755, true);
+        if (!is_dir($pastaDestino)) {
+            mkdir($pastaDestino, 0755, true);
         }
 
-        if (move_uploaded_file($_FILES[$campo]['tmp_name'], $caminhoRelativo)) {
-            return $caminhoRelativo;
+        if (move_uploaded_file($_FILES[$campo]['tmp_name'], $caminhoAbsoluto)) {
+            return $caminhoRelativo; // caminho salvo no banco
         }
     }
     return null;
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : '';

@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <h2>Login</h2>
     <form class="form-padrao" action="/includes/processaLogin.php" method="post">
+        <h2>Login</h2>
         <input type="text" name="username" placeholder="Usuário" required><br><br>
         <input type="text" name="password" placeholder="Senha" required><br><br>
         <button type="submit">Entrar</button>

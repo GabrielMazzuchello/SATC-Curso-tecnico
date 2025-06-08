@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <h2>Cadastro de Livro</h2>
     <form class="form-padrao" action="/includes/processaLivro.php" method="post" enctype="multipart/form-data">
+        <h1>Cadastro de Livro</h1>
         <input type="text" name="titulo" placeholder="Título" required><br><br>
 
         <input type="number" name="nrpaginas" placeholder="Número de páginas" required><br><br>

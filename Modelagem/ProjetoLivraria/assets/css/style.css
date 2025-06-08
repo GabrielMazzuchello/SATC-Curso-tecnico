@@ -1,5 +1,6 @@
 :root {
   --background-color: #0e111b;
+  --background-color-secundary: #111624;
   --text-color: #d4af37;
   --accent-color: #dbbb4f;
   --accent-hover: #ffd700;
@@ -37,7 +38,7 @@ h4 {
 .form-padrao {
   max-width: 500px;
   margin: 40px auto;
-  background-color: var(--background-color);
+  background-color: var(--background-color-secundary);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
@@ -91,13 +92,25 @@ h4 {
 /* Navegação e home */
 .home__nav {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   height: 150px;
   padding: 20px;
-  background-color: var(--background-color);
-  box-shadow: 0 4px 15px #00000080;
-  margin-bottom: 5px;
+  background-color: var(--background-color-secundary);
+  box-shadow: inset 0 20px 10px rgba(0, 0, 0, 0.4),
+    /* sombra interna para dentro */ 0 20px 10px rgba(0, 0, 0, 0.5); /* sombra externa para fora */
+  z-index: 10;
+}
+
+.home__nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 40px;
+  pointer-events: none;
 }
 
 .home__nav-img {
@@ -115,10 +128,12 @@ h4 {
 
 /* Pesquisas */
 .home__pesquisas {
+  display: grid;
+  align-items: center;
   background-color: var(--background-color);
-  padding-top: 5px;
-  margin: 5px;
-  height: 25px;
+  padding: 10px;
+  z-index: 1;
+  position: relative;
 }
 
 .home__pesquisas-form {
@@ -149,7 +164,7 @@ h4 {
   flex-direction: column;
   max-width: 600px;
   margin: 20px auto;
-  background-color: var(--background-color);
+  background-color: var(--background-color-secundary);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 15px #00000080;
@@ -311,6 +326,27 @@ h4 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Banner */
+
+.home__banners {
+  width: 100%;
+  height: 475px;
+  overflow: hidden;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.home__banners img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.home__banners img:hover {
+  transform: scale(1.03);
 }
 
 /* Cartão de livro */

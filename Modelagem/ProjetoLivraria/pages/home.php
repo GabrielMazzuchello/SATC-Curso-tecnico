@@ -54,6 +54,25 @@
             <button class="btn" type="submit">Buscar</button>
         </form>
     </div>
+    <div class="home__banners btn-brilho">
+        <img src="/assets/img/banner2.jpg" id="banner-image" alt="Banner 1">
+    </div>
+    <div class="home__products">
+        <?php include 'exibirLivros.php'; ?>
+    </div>
 </body>
+<script>
+    const banners = [
+        "/assets/img/banner1.png",
+        "/assets/img/banner2.jpg"
+    ];
+    let current = 0;
+    const bannerImg = document.getElementById("banner-image");
+
+    setInterval(() => {
+        current = (current + 1) % banners.length;
+        bannerImg.src = banners[current];
+    }, 5000); // Troca a cada 5 segundos
+</script>
 
 </html>
