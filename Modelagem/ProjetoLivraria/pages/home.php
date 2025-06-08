@@ -11,13 +11,13 @@
 <body>
     <div class="home__nav">
         <div>
-            <img class="home__nav-img btn-brilho" src="/assets/img/versoEprosa.png" alt="Imagem do login">
+            <a href="/pages/login.php"><img class="home__nav-img btn-brilho" src="/assets/img/versoEprosa.png" alt="Imagem do login"></a>
         </div>
         <div>
             <h1>Verso & Prosa</h1>
         </div>
         <div class="home__login-container">
-            <a href="/pages/login.php" class="btn btn-white btn-animate btn-brilho">Login</a>
+            <a href="/pages/login.php" class="btn btn-white btn-animate btn-brilho">Carrinho</a>
         </div>
     </div>
     <div class="home__pesquisas">
@@ -57,7 +57,7 @@
     <div class="home__banners btn-brilho">
         <img src="/assets/img/banner2.jpg" id="banner-image" alt="Banner 1">
     </div>
-    <div class="home__products">
+    <div class="home__products btn-brilho">
         <?php include 'exibirLivros.php'; ?>
     </div>
 </body>

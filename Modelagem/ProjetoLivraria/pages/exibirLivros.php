@@ -1,7 +1,8 @@
 <?php
 require_once 'includes/config.php';
 
-function limpar($valor) {
+function limpar($valor)
+{
     return htmlspecialchars(strip_tags(trim($valor)));
 }
 
@@ -61,8 +62,11 @@ if (mysqli_num_rows($resultado) === 0) {
         echo "<p><strong>Categoria:</strong> {$livro['categoria_nome']}</p>";
         echo "<p><strong>Editora:</strong> {$livro['editora_nome']}</p>";
         echo "<p><strong>Preço:</strong> R$ " . number_format($livro['preco'], 2, ',', '.') . "</p>";
+
+        // Botão de carrinho
+        echo "<button class='btn-carrinho' disabled>AddCarrinho</button>";
+
         echo "</div>";
     }
     echo "</div>";
 }
-?>
