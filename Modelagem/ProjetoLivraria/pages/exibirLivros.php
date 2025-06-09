@@ -23,34 +23,45 @@ $sql = "
     WHERE 1
 ";
 
-$params = [];
+$params = array();
+$bindValues = array();
 
 if ($autor) {
     $sql .= " AND livro.codautor = ?";
-    $params[] = $autor;
+    $params[] = 'i';
+    $bindValues[] = $autor;
 }
 if ($categoria) {
     $sql .= " AND livro.codcategoria = ?";
-    $params[] = $categoria;
+    $params[] = 'i';
+    $bindValues[] = $categoria;
 }
 if ($editora) {
     $sql .= " AND livro.codeditora = ?";
-    $params[] = $editora;
+    $params[] = 'i';
+    $bindValues[] = $editora;
 }
 
 $sql .= " LIMIT 10";
 
 $stmt = mysqli_prepare($conectar, $sql);
 
-if ($params) {
-    $tipos = str_repeat("i", count($params));
-    mysqli_stmt_bind_param($stmt, $tipos, ...$params);
+if (count($params) > 0) {
+    // bind_param precisa de argumentos por referência em PHP 5.3
+    $refs = array();
+    foreach ($bindValues as $key => $value) {
+        $refs[$key] = &$bindValues[$key];
+    }
+
+    array_unshift($refs, implode('', $params)); // tipos no início
+
+    call_user_func_array(array($stmt, 'bind_param'), $refs);
 }
 
 mysqli_stmt_execute($stmt);
 $resultado = mysqli_stmt_get_result($stmt);
 
-if (mysqli_num_rows($resultado) === 0) {
+if (!$resultado || mysqli_num_rows($resultado) === 0) {
     echo "<p style='text-align:center;'>Nenhum livro encontrado.</p>";
 } else {
     echo "<div class='livroGrid'>";
@@ -62,10 +73,7 @@ if (mysqli_num_rows($resultado) === 0) {
         echo "<p><strong>Categoria:</strong> {$livro['categoria_nome']}</p>";
         echo "<p><strong>Editora:</strong> {$livro['editora_nome']}</p>";
         echo "<p><strong>Preço:</strong> R$ " . number_format($livro['preco'], 2, ',', '.') . "</p>";
-
-        // Botão de carrinho
         echo "<button class='btn-carrinho' disabled>AddCarrinho</button>";
-
         echo "</div>";
     }
     echo "</div>";

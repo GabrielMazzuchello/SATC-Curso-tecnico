@@ -59,6 +59,44 @@ h4 {
   box-sizing: border-box;
 }
 
+.form-padrao select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  box-sizing: border-box;
+  appearance: none;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon fill='%23d4af37' points='0,0 16,0 8,8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+.form-padrao select:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 5px var(--accent-hover);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .form-padrao input::placeholder,
 .form-padrao textarea::placeholder {
   color: var(--input-placeholder);
