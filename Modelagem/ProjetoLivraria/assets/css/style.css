@@ -89,6 +89,34 @@ h4 {
   background-color: var(--button-hover-bg);
 }
 
+/* Botão de retorno */
+.btn-voltar {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--text-color);
+  font-weight: bold;
+  border: 2px solid var(--border-color);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-voltar::before {
+  content: "←";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.btn-voltar:hover {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 10px var(--accent-hover);
+}
+
 /* Navegação e home */
 .home__nav {
   display: flex;
@@ -172,6 +200,7 @@ h4 {
 }
 
 .homeCadastros__list {
+  font-size: 25px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -331,10 +360,10 @@ h4 {
 /* Banner */
 
 .home__banners {
-  width: 100%;
+  width: 98%;
+  margin: 15px;
   height: 475px;
   overflow: hidden;
-  margin: 10px;
   border-radius: 15px;
 }
 

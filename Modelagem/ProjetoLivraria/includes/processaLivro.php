@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'alerta.php';
 
 function salvarImagem($campo)
 {
@@ -40,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($titulo && $codautor && $codcategoria && $codeditora && $fotoCapa1) {
         if (!isset($conectar)) {
-            echo "Erro de conexão com o banco de dados.";
+            alerta("Erro de conexão com o banco de dados.");
             exit;
         }
         $stmt = mysqli_prepare($conectar, "INSERT INTO livro (titulo, nrpaginas, ano, codautor, codcategoria, codeditora, resenha, preco, fotocapa1, fotocapa2) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -48,13 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mysqli_stmt_bind_param($stmt, "siiiiisdss", $titulo, $nrpaginas, $ano, $codautor, $codcategoria, $codeditora, $resenha, $preco, $fotoCapa1, $fotoCapa2);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
-            echo "Livro cadastrado com sucesso!";
+            alerta("Livro cadastrado com sucesso!", "/pages/homeCadastros.php");
         } else {
-            echo "Erro ao preparar a query: " . mysqli_error($conectar);
+            alerta("Erro ao preparar a query: " . mysqli_error($conectar));
         }
     } else {
-        echo "Por favor, preencha todos os campos obrigatórios e envie uma imagem.";
+        alerta("Por favor, preencha todos os campos obrigatórios e envie uma imagem.");
     }
 } else {
-    echo "Requisição inválida.";
+    alerta("Requisição inválida.");
 }

@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'alerta.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
@@ -10,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        echo "Editora cadastrada.";
+        alerta("Editora cadastrada com sucesso!", "/pages/homeCadastros.php");
 
         exit;
     } else {
-        echo "Por favor, preencha o nome.";
+        alerta("Por favor, preencha o nome.");
     }
 } else {
-    echo "Acesso inválido.";
+    alerta("Acesso inválido.");
 }

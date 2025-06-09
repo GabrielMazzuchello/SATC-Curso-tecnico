@@ -11,6 +11,7 @@
 <body>
     <form class="form-padrao" action="/includes/processaEditora.php" method="post">
         <h1>Cadastro de Editora</h1>
+        <a href="homeCadastros.php" class="btn-voltar">Voltar</a>
         <input type="text" name="nome" placeholder="Nome da editora">
         <button type="submit">Cadastrar</button>
     </form>

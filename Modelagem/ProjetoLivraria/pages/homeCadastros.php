@@ -12,6 +12,7 @@
 
     <div class="homeCadastros__container">
         <h1>Bem vindo a pagina dos cadastros</h1>
+        <a href="../index.php" class="btn-voltar">Voltar</a>
         <ul class="homeCadastros__list">
             <li><a href="/pages/cadastroAutor.php">Cadastro do autor</a></li>
             <li><a href="/pages/cadastroCategoria.php">Cadastro da categoria</a></li>

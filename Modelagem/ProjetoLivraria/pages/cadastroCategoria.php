@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <form class="form-padrao" action="/includes/processaCategoria" method="post">
+    <form class="form-padrao" action="/includes/processaCategoria.php" method="post">
         <h1>Cadastro de Categorias</h1>
+        <a href="homeCadastros.php" class="btn-voltar">Voltar</a>
         <input type="text" name="nome" placeholder="Nome da categoria" required>
         <button type="submit">Cadastrar</button>
     </form>
