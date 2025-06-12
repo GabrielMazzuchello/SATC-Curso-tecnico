@@ -36,7 +36,7 @@ h4 {
 
 /* Formulário padrão */
 .form-padrao {
-  max-width: 500px;
+  max-width: 600px;
   margin: 40px auto;
   background-color: var(--background-color-secundary);
   padding: 30px;
@@ -474,12 +474,33 @@ h4 {
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 14px;
-  cursor: not-allowed; /* porque está desativado */
-  opacity: 0.6;
+  cursor: pointer;
   transition: all 0.3s;
 }
 
 .btn-carrinho:hover {
-  opacity: 1;
   transform: scale(1.05);
+  background-color: var(--button-hover-bg);
+}
+
+.btn-carrinho.enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.form-quantidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.form-quantidade input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
 }

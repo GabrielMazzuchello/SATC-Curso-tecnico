@@ -17,7 +17,7 @@
             <h1>Verso & Prosa</h1>
         </div>
         <div class="home__login-container">
-            <a href="../index.php" class="btn btn-white btn-animate btn-brilho">Carrinho</a>
+            <a href="/pages/carrinho.php" class="btn btn-white btn-animate btn-brilho">Carrinho</a>
         </div>
     </div>
     <div class="home__pesquisas">

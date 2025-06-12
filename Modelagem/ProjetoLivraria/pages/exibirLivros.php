@@ -73,7 +73,11 @@ if (!$resultado || mysqli_num_rows($resultado) === 0) {
         echo "<p><strong>Categoria:</strong> {$livro['categoria_nome']}</p>";
         echo "<p><strong>Editora:</strong> {$livro['editora_nome']}</p>";
         echo "<p><strong>Preço:</strong> R$ " . number_format($livro['preco'], 2, ',', '.') . "</p>";
-        echo "<button class='btn-carrinho' disabled>AddCarrinho</button>";
+        echo "<form action='/pages/adicionaCarrinho.php' method='post'>";
+        echo "  <input type='hidden' name='id_livro' value='{$livro['codigo']}'>";
+        echo "  <input type='hidden' name='quantidade' value='1'>";
+        echo "  <button class='btn-carrinho' type='submit'>AddCarrinho</button>";
+        echo "</form>";
         echo "</div>";
     }
     echo "</div>";
