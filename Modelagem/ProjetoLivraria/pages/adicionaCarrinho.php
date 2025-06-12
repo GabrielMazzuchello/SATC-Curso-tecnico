@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $qtd = intval($_POST['quantidade']);
 
     if (!isset($_SESSION['carrinho'])) {
-        $_SESSION['carrinho'] = [];
+        $_SESSION['carrinho'] = array();
     }
 
     if (isset($_SESSION['carrinho'][$id])) {

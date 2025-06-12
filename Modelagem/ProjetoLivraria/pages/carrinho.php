@@ -4,7 +4,7 @@ require_once '../includes/config.php';
 
 // Inicializa carrinho se não existir
 if (!isset($_SESSION['carrinho'])) {
-    $_SESSION['carrinho'] = [];
+    $_SESSION['carrinho'] = array();
 }
 
 // Atualizar quantidade
@@ -24,7 +24,7 @@ if (isset($_GET['remover'])) {
 }
 
 // Obter dados
-$livros = [];
+$livros = array();
 $total = 0;
 
 if (!empty($_SESSION['carrinho'])) {
