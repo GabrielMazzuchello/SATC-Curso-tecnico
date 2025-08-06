@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: 09/06/2025 às 21h36min
+-- Tempo de Geração: 16/06/2025 às 21h00min
 -- Versão do Servidor: 5.5.20
 -- Versão do PHP: 5.3.9
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `codigo` int(5) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   PRIMARY KEY (`codigo`) USING BTREE
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -63,7 +63,8 @@ INSERT INTO `categoria` (`codigo`, `nome`) VALUES
 (1, 'RomÃ¢nce'),
 (2, 'Ficção Científica'),
 (3, 'MistÃ©rio'),
-(4, 'Drama');
+(4, 'Drama'),
+(5, 'MistÃ©rio2');
 
 -- --------------------------------------------------------
 
