@@ -28,7 +28,40 @@ if (!empty($_GET["pokemon_name"])) {
     curl_close($ch);
 
     if ($httpcode == 200) {
-        $response = json_decode($apiResponse, true);
+        $pokemonData = json_decode($apiResponse, true);
+
+        $pokemonName = ucfirst($pokemonData['name']);
+        $pokemonId = $pokemonData['id'];
+        $pokemonTypes = ucfirst($pokemonData['types'][0]['type']['name']);
+        $pokemonImage = $pokemonData['sprites']["other"]['official-artwork']['front_default'];
+
+        $descriptionUrl = $pokemonData['species']['url'];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $descriptionUrl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, true);
+        $speciesResponse = curl_exec($ch);
+        curl_close($ch);
+
+        $descriptionData = json_decode($speciesResponse, true);
+        $description = "Descrição não encontrada";
+
+        foreach ($descriptionData['flavor_text_entries'] as $entry) {
+            if ($entry['language']['name'] === 'en') {
+                $description = $entry['flavor_text'];
+                break;
+            }
+        }
+
+        $response = array(
+            "success" => true,
+            "name" => $pokemonName,
+            "id" => $pokemonId,
+            "type" => $pokemonTypes,
+            "description" => $description,
+            "image" => $pokemonImage
+        );
     }
 }
 echo json_encode($response);
